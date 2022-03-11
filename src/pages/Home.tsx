@@ -1,57 +1,61 @@
-import MessageListItem from '../components/MessageListItem';
-import { useState } from 'react';
-import { Message, getMessages } from '../data/messages';
-import {
-  IonContent,
-  IonHeader,
-  IonList,
-  IonPage,
-  IonRefresher,
-  IonRefresherContent,
-  IonTitle,
-  IonToolbar,
-  useIonViewWillEnter
-} from '@ionic/react';
+import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { useSelector } from 'react-redux';
+import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
+
+import LanguageSwitch from '../components/LanguageSwitch';
+import { RootState } from '../store';
+import HTMLFragment from '../components/HTMLFragment';
+
 import './Home.css';
+import Flowchart from '../components/Flowchart';
+import Featurette from '../components/Featurette';
+
 
 const Home: React.FC = () => {
-
-  const [messages, setMessages] = useState<Message[]>([]);
-
-  useIonViewWillEnter(() => {
-    const msgs = getMessages();
-    setMessages(msgs);
-  });
-
-  const refresh = (e: CustomEvent) => {
-    setTimeout(() => {
-      e.detail.complete();
-    }, 3000);
-  };
-
+  // get the language settings
+  const lang = useSelector((state: RootState) => state.language.lang);
+  
   return (
     <IonPage id="home-page">
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Inbox</IonTitle>
+          <IonTitle>RUINS app</IonTitle>
+          <IonButtons slot="end">
+            <IonButton routerLink="/introduction" routerDirection="forward">{lang === 'en' ? 'About' : 'Mehr Info'}</IonButton>
+            <LanguageSwitch />
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonRefresher slot="fixed" onIonRefresh={refresh}>
-          <IonRefresherContent></IonRefresherContent>
-        </IonRefresher>
+        <ParallaxBanner 
+          layers={[
+            {image: "https://picsum.photos/1920/840", speed: -20, opacity: [0, 0.8]},
+          ]}
+          style={{aspectRatio: '2 / 1', height: '300px'}}
+        >
+          <div style={{height: '100%', width: '100%', position: 'absolute', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <h1 style={{fontWeight: 'bold', letterSpacing: 3.3, fontSize: '5rem'}}>RUINS</h1>
+          </div>
+        </ParallaxBanner>
+        
+        <IonGrid>
+          <IonRow>
+            <IonCol size="12" sizeMd="8" offset="0" offsetMd="2">
+            <HTMLFragment src="teaser" />
+            </IonCol>
+          </IonRow>
 
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">
-              Inbox
-            </IonTitle>
-          </IonToolbar>
-        </IonHeader>
+          <IonRow>
+            <IonCol size="12" sizeMd="8" offset="0" offsetMd="2">
+            <Flowchart />
+            </IonCol>
+          </IonRow>
+        </IonGrid>
 
-        <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
-        </IonList>
+        <Featurette />
+        
+        <div style={{height: '2000px'}}></div>
+        
       </IonContent>
     </IonPage>
   );
