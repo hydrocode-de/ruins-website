@@ -33,7 +33,7 @@ const Featurette : React.FC = () => {
                         </IonCard>
                 </IonCol>
                 <IonCol size="12" sizeLg="3" sizeMd="4">
-                <IonCard href="https://github.com/hydrocode-de/RUINSapp" target="_blank">
+                <IonCard href="https://hydrocode-de.github.io/RUINSapp" target="_blank">
                         <IonCardContent style={{textAlign: 'center'}}>
                             <IonIcon icon={settingsOutline} style={{fontSize: '64px'}}/>
                             <IonLabel>

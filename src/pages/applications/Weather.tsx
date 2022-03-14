@@ -12,7 +12,7 @@ export const Weather: React.FC = () => (
             </IonToolbar>
         </IonHeader>
         <IonContent>
-            <StreamlitLoader src="http://65.108.91.149:42001/" title="Weather Explorer" />
+            <StreamlitLoader src="http://65.108.91.149:42001/?layout=wide" title="Weather Explorer" />
         </IonContent>
     </IonPage>
 );
