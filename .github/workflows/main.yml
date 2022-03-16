@@ -28,5 +28,12 @@ jobs:
       env:
         CI: false
     
-    - run: cd build & ls -lah
+    - name: Copy to machine
+      uses: appleboy/sccp-action@master
+      with:
+        host: "ruins.hydrocode.de"
+        username: root
+        key: ${{ secrets.SCP_KEY }}
+        source: build/*
+        target: /var/www/ruins-test
 
