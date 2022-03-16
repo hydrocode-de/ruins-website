@@ -27,6 +27,8 @@ jobs:
         cache: 'npm'
     - run: npm i -g @ionic/cli
     - run: npm i
+      env:
+        CI: false
     - run: ionic build --prod --engine=browser
     
     - run: ls -lah
