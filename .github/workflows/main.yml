@@ -28,5 +28,5 @@ jobs:
       env:
         CI: false
     
-    - run: ls -lah
+    - run: cd build & ls -lah
 
