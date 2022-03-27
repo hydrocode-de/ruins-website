@@ -9,6 +9,7 @@ import HTMLFragment from '../components/HTMLFragment';
 import './Home.css';
 import Flowchart from '../components/Flowchart';
 import Featurette from '../components/Featurette';
+import InfoSegment from '../components/InfoSegment';
 
 
 const Home: React.FC = () => {
@@ -40,21 +41,27 @@ const Home: React.FC = () => {
         
         <IonGrid>
           <IonRow>
-            <IonCol size="12" sizeMd="8" offset="0" offsetMd="2">
+            <IonCol size="12" sizeMd="7" offset="0" offsetMd="2">
             <HTMLFragment src="teaser" />
             </IonCol>
           </IonRow>
 
           <IonRow>
-            <IonCol size="12" sizeMd="8" offset="0" offsetMd="2">
+            <IonCol size="12" sizeMd="7" offset="0" offsetMd="2">
             <Flowchart />
             </IonCol>
           </IonRow>
         </IonGrid>
 
         <Featurette />
-        
-        <div style={{height: '2000px'}}></div>
+
+        <IonGrid>
+          <IonRow>
+            <IonCol size="12" sizeMd="10" offset="0" offsetMd="1">
+              <InfoSegment />
+            </IonCol>
+          </IonRow>
+        </IonGrid>
         
       </IonContent>
     </IonPage>
