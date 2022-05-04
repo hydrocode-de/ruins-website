@@ -35,6 +35,6 @@ jobs:
         username: root
         key: ${{ secrets.SCP_KEY }}
         source: build/*
-        target: /var/www/ruins-test
+        target: /var/www/html
         strip_components: 1
 
