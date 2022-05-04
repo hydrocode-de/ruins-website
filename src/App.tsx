@@ -30,7 +30,12 @@ import { Provider } from 'react-redux';
 /* Pages */
 import Home from './pages/Home';
 import StaticPage from './pages/StaticPage';
+
+/* Application pages */
 import Weather from './pages/applications/Weather';
+import Climate from './pages/applications/Climate';
+import Uncertainty from './pages/applications/Uncertainty';
+
 
 setupIonicReact();
 
@@ -51,6 +56,12 @@ const App: React.FC = () => (
           </Route>
           <Route path="/weather" exact={true}>
             <Weather />
+          </Route>
+          <Route path="/climate" exact>
+            <Climate />
+          </Route>
+          <Route path="/uncertainty" exact>
+            <Uncertainty />
           </Route>
         </IonRouterOutlet>
       </IonReactRouter>

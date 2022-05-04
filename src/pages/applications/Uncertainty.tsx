@@ -3,10 +3,9 @@ import { useSelector } from "react-redux";
 import StreamlitLoader from "../../components/StreamlitLoader";
 import { RootState } from "../../store";
 
-export const Weather: React.FC = () => {
-    // get language
+export const Uncertainty: React.FC = () => {
+    // get the language
     const lang = useSelector((state: RootState) => state.language.lang);
-
     return (
         <IonPage>
             <IonHeader>
@@ -14,14 +13,14 @@ export const Weather: React.FC = () => {
                     <IonButtons slot="start">
                         <IonBackButton />
                     </IonButtons>
-                    <IonTitle>Weather Explorer</IonTitle>
+                    <IonTitle>Climate Explorer</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent>
-                <StreamlitLoader src={`http://116.203.189.3:42001/?layout=wide&lang=${lang}`} title="Weather Explorer" />
+                <StreamlitLoader src={`http://116.203.189.3:42003/?layout=wide&lang=${lang}`} title="Climate Explorer" />
             </IonContent>
         </IonPage>
     );
 }
 
-export default Weather;
+export default Uncertainty;

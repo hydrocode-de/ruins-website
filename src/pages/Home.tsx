@@ -22,7 +22,6 @@ const Home: React.FC = () => {
         <IonToolbar>
           <IonTitle>RUINS app</IonTitle>
           <IonButtons slot="end">
-            <IonButton routerLink="/introduction" routerDirection="forward">{lang === 'en' ? 'About' : 'Mehr Info'}</IonButton>
             <LanguageSwitch />
           </IonButtons>
         </IonToolbar>
@@ -41,26 +40,35 @@ const Home: React.FC = () => {
         
         <IonGrid>
           <IonRow>
-            <IonCol size="12" sizeMd="7" offset="0" offsetMd="2">
+            <IonCol size="12" sizeMd="7" offset="0" offsetMd="3">
             <HTMLFragment src="teaser" />
             </IonCol>
           </IonRow>
 
           <IonRow>
-            <IonCol size="12" sizeMd="7" offset="0" offsetMd="2">
+            <IonCol size="12" sizeMd="10" offset="0" offsetMd="1">
             <Flowchart />
             </IonCol>
           </IonRow>
         </IonGrid>
-
+        
+        <IonGrid style={{height: '20vh', display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
         <Featurette />
+        </IonGrid>
 
-        <IonGrid>
+        <IonGrid style={{minHeight: '60vh', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
           <IonRow>
-            <IonCol size="12" sizeMd="10" offset="0" offsetMd="1">
+            <IonCol size="12" sizeMd="7" offset="0" offsetMd="3">
+              <h1>{lang === 'en' ? 'Learn more about RUINS' : 'Erfahre mehr über RUINS' }</h1>
+            </IonCol>
+            <IonCol size="12" sizeMd="8" offset="0" offsetMd="2">
               <InfoSegment />
             </IonCol>
           </IonRow>
+        </IonGrid>
+
+        <IonGrid style={{height: '15vh', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+          <div style={{width: '100%', border: '1 px solid silver'}} />
         </IonGrid>
         
       </IonContent>
