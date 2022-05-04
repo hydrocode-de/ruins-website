@@ -11,7 +11,7 @@ const Featurette : React.FC = () => {
         <IonGrid>
             <IonRow>
                 <IonCol size="12" sizeLg="3" sizeMd="4" offset="0" offsetLg="2">
-                    <IonCard routerLink="/introduction" routerDirection="root">
+                    <IonCard href="https://hydrocode-de.github.io/RUINSapp" target="_blank">
                         <IonCardContent style={{textAlign: 'center'}}>
                             <IonIcon icon={documentText} style={{fontSize: '64px'}}/>
                             <IonLabel>
