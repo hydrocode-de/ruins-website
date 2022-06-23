@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Box, Grid } from "@mui/material";
+import { InView } from 'react-intersection-observer'
+
 import AppHeader from "./components/AppHeader"
 import SideStepper from "./components/SideStepper";
 import { TOPICS, TOPIC_TYPE } from './topics.model';
 
-import VisibilitySensor from 'react-visibility-sensor';
 
 // import the Topics
 import UncertaintyTopic from './topics/Uncertainty';
@@ -37,25 +38,25 @@ const Home = () => {
 
                 <Grid item xs={10} sx={{backgroundColor: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center'}}>
                     
-                    <VisibilitySensor onChange={(isVisible: boolean) => isVisible ? setActiveTopic('uncertainty') : null} partialVisibility minTopValue={500} intervalCheck>
+                    <InView onChange={( inView ) => inView ? setActiveTopic('uncertainty') : null} >
                         <Box ref={TOPICS.uncertainty}><UncertaintyTopic /></Box>
-                    </VisibilitySensor>
+                    </InView>
 
-                    <VisibilitySensor onChange={(isVisible: boolean) => isVisible ? setActiveTopic('weather') : null} partialVisibility minTopValue={500} intervalCheck>
+                    <InView onChange={( inView ) => inView ? setActiveTopic('weather') : null} >
                         <Box ref={TOPICS.weather}><WeatherClimate /></Box>
-                    </VisibilitySensor>
+                    </InView>
+                    
+                    <InView onChange={( inView ) => inView ? setActiveTopic('agriculture') : null} >
+                        <Box ref={TOPICS.agriculture} sx={{height: '100vh', backgroundColor: 'yellow', width: '100%'}} />
+                    </InView>
 
-                    <VisibilitySensor onChange={(isVisible: boolean) => isVisible ? setActiveTopic('agriculture') : null} partialVisibility minTopValue={500} intervalCheck>
-                        <Box ref={TOPICS.agriculture} sx={{minHeight: '100vh', backgroundColor: 'yellow', width: '100%'}} />
-                    </VisibilitySensor>
+                    <InView onChange={( inView ) => inView ? setActiveTopic('extremes') : null} >
+                        <Box ref={TOPICS.extremes} sx={{height: '100vh', backgroundColor: 'lightsalmon', width: '100%'}} />
+                    </InView>
 
-                    <VisibilitySensor onChange={(isVisible: boolean) => isVisible ? setActiveTopic('extremes') : null} partialVisibility minTopValue={500} intervalCheck>
-                        <Box ref={TOPICS.extremes} sx={{minHeight: '100vh', backgroundColor: 'lightsalmon', width: '100%'}} />
-                    </VisibilitySensor>
-
-                    <VisibilitySensor onChange={(isVisible: boolean) => isVisible ? setActiveTopic('other') : null} partialVisibility minTopValue={500} intervalCheck>
+                    <InView onChange={( inView ) => inView ? setActiveTopic('other') : null} >
                         <Box ref={TOPICS.other} sx={{minHeight: '100vh', backgroundColor: 'lightblue', width: '100%'}} />
-                    </VisibilitySensor>
+                    </InView>
 
                 </Grid>
             </Grid>

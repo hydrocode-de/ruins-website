@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
-import VisibilitySensor from 'react-visibility-sensor';
 import { useDispatch  } from 'react-redux';
-import { setStep, resetStep } from '../features/settings';
+import { InView } from 'react-intersection-observer';
 
+import { setStep, resetStep } from '../features/settings';
 import { TopicStep } from "../topics.model";
 
 
@@ -29,9 +29,9 @@ const TopicWrapper: React.FC<TopicWrapperProps> = ({ steps }) => {
                 return (
                     <Box sx={{minHeight: '100vh', paddingTop: '2rem', paddingBottom: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}} key={index}>
                         <span></span>
-                        <VisibilitySensor onChange={(isVisible: boolean) => scrollHandler(isVisible, step)}>
+                        <InView onChange={(inView) => scrollHandler(inView, step)} threshold={0.5}>
                             <Box>{ step.content }</Box>
-                        </VisibilitySensor>
+                        </InView>
                         <span></span>
                     </Box>
                 )
@@ -41,7 +41,3 @@ const TopicWrapper: React.FC<TopicWrapperProps> = ({ steps }) => {
 }
 
 export default TopicWrapper;
-
-function useDispatcher() {
-    throw new Error("Function not implemented.");
-}
