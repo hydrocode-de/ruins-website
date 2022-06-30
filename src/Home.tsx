@@ -10,6 +10,7 @@ import { TOPICS, TOPIC_TYPE } from './topics.model';
 // import the Topics
 import UncertaintyTopic from './topics/Uncertainty';
 import WeatherClimate from './topics/WeatherClimate';
+import TemperatureShift from './topics/TemperatureShift';
 
 
 const Home = () => {
@@ -39,7 +40,10 @@ const Home = () => {
                 <Grid item xs={10} sx={{backgroundColor: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center'}}>
                     
                     <InView onChange={( inView ) => inView ? setActiveTopic('uncertainty') : null} >
-                        <Box ref={TOPICS.uncertainty}><UncertaintyTopic /></Box>
+                        <Box ref={TOPICS.uncertainty}>
+                            <UncertaintyTopic />
+                            <TemperatureShift />
+                        </Box>
                     </InView>
 
                     <InView onChange={( inView ) => inView ? setActiveTopic('weather') : null} >
