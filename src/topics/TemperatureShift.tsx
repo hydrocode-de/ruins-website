@@ -1,5 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
+import HoverTooltip from "../components/HoverTooltip";
 import StepImage from "../components/StepImage";
 import TopicWrapper from "../components/TopicWrapper";
 import { RootState } from "../store";
@@ -20,7 +21,7 @@ const steps_de: TopicStep[] = [
         content: <>
             <Typography variant="h3">Temperaturverteilung</Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
-                Die Abbildung zeigt eine angenommene Verteilung von <strong style={{color: 'red'}}>warmen</strong> und
+                Die Abbildung zeigt eine angenommene Verteilung von <strong style={{color: 'red'}}>warmen</strong> und&nbsp;
                 <strong style={{color: 'blue'}}>kalten</strong> Tagen. Dies ist der Ist-Zustand. Meist hat es Tagestemperaturen
                 ähnlich dem Mittelwert, manchmal wird es aber heiß oder frostig.
             </Typography>
@@ -30,9 +31,10 @@ const steps_de: TopicStep[] = [
         imgSrc: '/steps/tshift_step2.png',
         content: <>
             <Typography variant="h3">Es wird wärmer</Typography>
-            <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
-                Durch den Klimawandel wird es wärmer. In der Abbildung ist die mittlere Temperature der Verteilung um
-                gerade einmal <strong style={{fontSize: '1.6rem'}}>1,5 °C</strong> verschoben. 
+            <Typography variant="body2" component="div" sx={{marginTop: '2rem'}}>
+                Durch den Klimawandel wird es wärmer. In der Abbildung ist die mittlere Temperatur der 
+                <HoverTooltip img="https://upload.wikimedia.org/wikipedia/commons/7/74/Normal_Distribution_PDF.svg" wikipedia="https://de.wikipedia.org/api/rest_v1/page/summary/Normalverteilung">Verteilung</HoverTooltip> 
+                um gerade einmal <strong style={{fontSize: '1.rem'}}>1,5 °C</strong> verschoben. 
                 Alleine diese Verschiebung hat bereits mehr heiße Tage zur Folge.
             </Typography>
             <Typography variant="body2" component="p">
@@ -47,7 +49,7 @@ const steps_de: TopicStep[] = [
         content: <>
             <Typography variant="h3">Die Variabilität nimmt zu</Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
-                Wenn wir die <strong>Varianz</strong> der Verteilung von Tagestemperaturen erhöhen,
+                Wenn wir die <HoverTooltip wikipedia="https://de.wikipedia.org/api/rest_v1/page/summary/Varianz">Varianz</HoverTooltip> der Verteilung von Tagestemperaturen erhöhen,
                 werden die Schwänze der Verteilung fetter. Nun sind bereits wieder Frosttage zu sehen.
                 Gelichzeitig hat diese Veränderung aber noch mehr heiße, und sogar einige tropische 
                 Tage zur Folge. 
