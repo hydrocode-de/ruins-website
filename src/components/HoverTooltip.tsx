@@ -1,7 +1,7 @@
 import { Box, Card, CardMedia, IconButton, Popover, Typography } from "@mui/material";
 import React, { useState } from "react";
 import axios from 'axios';
-import { Close } from '@mui/icons-material';
+import { Close, HelpOutlineOutlined, LaunchOutlined } from '@mui/icons-material';
 
 interface HoverTooltipProps {
     text?: string;
@@ -80,7 +80,7 @@ const HoverTooltip: React.FC<React.PropsWithChildren<HoverTooltipProps>> = ({ ch
                 onMouseEnter={handlePopoverOpen}
                 /* onMouseLeave={handlePopoverClose} */
             >
-                <strong>&nbsp;{ children }&nbsp;</strong>
+                <strong>&nbsp;<LaunchOutlined fontSize="small" sx={{fontSize: '1rem', verticalAlign: 'text-bottom'}} />{ children }&nbsp;</strong>
             </span>
             <Popover
                 open={open}
