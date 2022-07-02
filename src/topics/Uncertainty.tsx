@@ -71,29 +71,29 @@ const steps_de: TopicStep[] = [
     {
         imgSrc: '/steps/uncertainty_step3.png', 
         content: <>
-            <Typography variant="h3">Wenn Unvorhergesehens passiert.</Typography>
+            <Typography variant="h3">Risikoreiche Schranken</Typography>
             <Typography variant="body2" component="p">
-                Auf dem Weg zur Arbeit gibt es einen Bahnübergang. Ist dieser geschlossen, brauchst du
-                leider im Schnitt 22 Minuten, immer noch mit einer Abweichung von 2 Minuten. 
-                Dieser Umstand wird durch die zweite, blaue Verteilung dargestellt.<br />
-                Wir können für beide Varianten das <strong style={{fontSize: '120%'}}>Risiko</strong> zu spät zu kommen statistisch
-                beschreiben, jedoch herrscht <strong style={{fontSize: '120%'}}>Unsicherheit</strong>, also Unwissen 
-                über die Wahrscheinlichkeit mit der die Schranke offen sein wird.
+                Mit der Information über die Wahrscheinlichkeitsverteilungen der Fahrzeiten für verschiedene Zustände und Handlungsoptionen 
+                ergibt sich ein neues Bild für die Entscheidungsfindung: ►Abb. 3 Bei Handlungsoption A hängt die Fahrzeit sehr von der 
+                Schrankenstellung ab. Ist die Schranke geöffnet, dauert die Fahrt nur 15 Minuten (Bestzeit bei grüner Welle und ohne Bremsen) 
+                bis 22 Minuten. Ist die Schranke geschlossen, können Sie Glück haben und nur 1 Minute warten müssen 
+                (16 Minuten Fahrzeit zur Arbeit). Oder Sie haben Pech und müssen wegen Staus zwei Schrankenöffnungen abwarten 
+                (45 Minuten Fahrzeit). Im zweiten Fall ist die Verteilung breiter als im ersten Fall, das Risiko ist größer.
+                Bei Handlungsoption B ist die Fahrzeit überhaupt nicht von der Schrankenöffnung abhängig. Beide Verteilungen sind 
+                deckungsgleich, das Risiko ist also gleich groß.
             </Typography>
             </>
     },
     {
         imgSrc: '/steps/uncertainty_step4.png',
         content: <>
-            <Typography variant="h3">Einen Umweg fahren?</Typography>
+            <Typography variant="h3">Unsicherheits- und Risikoverhalten</Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
-                Es gibt eine alternative Route ohne Bahnschranke. Allderings musst du dann <strong>immer</strong>
-                etwas weiter fahren. Im Schnitt wirst du immer <strong style={{fontSize: '120%'}}>19 Minuten</strong>
-                brauchen.
-            </Typography>
-            <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
-                Dazu kommt noch, dass der längere Weg, auch das <strong>Risiko</strong> erhöht länger zu brauchen.
-                Nun liegt die Abweichung mit der gerechnet werden muss bereits bei <strong style={{fontSize: '120%'}}>4 Minuten</strong>
+                Für welche Route Sie sich entscheiden, ist nicht nur von objektiven Informationen über die Fahrzeiten und ihre 
+                Wahrscheinlichkeit abhängig, sondern von Ihrem individuellen Unsicherheits- und Risikoverhalten. Sind Sie ein 
+                risikoliebender Mensch, entscheiden Sie sich eher für Route A und drücken die Daumen, dass die Schranke offen ist. 
+                Sind Sie ein sicherheitsliebender Mensch, fahren Sie lieber den Umweg und umgehen damit das Risiko eines 
+                langen Staus am Bahnübergang.
             </Typography>
         </>
     }
