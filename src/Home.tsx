@@ -11,6 +11,7 @@ import { TOPICS, TOPIC_TYPE } from './topics.model';
 import UncertaintyTopic from './topics/Uncertainty';
 import WeatherClimate from './topics/WeatherClimate';
 import TemperatureShift from './topics/TemperatureShift';
+import ScrollButtonArea from './components/ScrollButtonArea';
 
 
 const Home = () => {
@@ -64,6 +65,8 @@ const Home = () => {
 
                 </Grid>
             </Grid>
+
+            <ScrollButtonArea />
         </>
     )
 }
