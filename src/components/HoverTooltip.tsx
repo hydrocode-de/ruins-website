@@ -1,7 +1,7 @@
 import { Box, Card, CardMedia, IconButton, Popover, Typography } from "@mui/material";
 import React, { useState } from "react";
 import axios from 'axios';
-import { Close, HelpOutlineOutlined, LaunchOutlined } from '@mui/icons-material';
+import { Close, LaunchOutlined } from '@mui/icons-material';
 
 interface HoverTooltipProps {
     text?: string;

@@ -13,11 +13,49 @@ import { TopicStep } from '../topics.model';
 const steps_de: TopicStep[] = [
     {
         content: <>
-        <Typography variant="h1">Wetterdaten und Klimamodelle</Typography>
+            <Typography variant="h1">Wetter und Klima</Typography>
+            <Typography variant="h2" sx={{marginTop: '2rem'}}>
+                Kurzfristiges lokales Wetter - alles andere als sicher!
+            </Typography> 
+        </>
+    },
+    {
+        content: <>
+            <Typography variant="h3">Atmosphäre als chaotisches System</Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
-                Dieser Kurze Teasertext führ auf den Sinn und Zweck des ganzen Kapitels hin.
-                Der User soll verstehen, warum es überhaupt sinnvoll ist Wetterdaten zu verstehen,
-                bevor eine der Themen Apps geladen wird
+            Das Wetter vorherzusagen ist dank aufwändiger Computersimulationen in den letzten Jahrzehnten einfacher und genauer geworden. 
+            Aber die Atmosphäre ist ein chaotisches System, d.h. kleine Änderungen zu Beginn können am Ende einen großen Effekt haben. 
+            Und das ist immer noch schwer vorherzusagen. 
+            </Typography>
+        </>
+    },
+    {
+        content: <>
+            <Typography variant="h3">Raum-zeitliche Variabilitiät des Wetters</Typography>
+            <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
+                Aber selbst das aktuelle oder vergangene Wetter zu messen ist nicht einfach, denn Wettergrößen wie Temperatur oder 
+                Niederschlag sind sehr variabel, sowohl zeitlich als auch räumlich. Für die Temperatur spielen neben gerichteten 
+                Trends wie Tagesgängen und jahreszeitlichen Verläufen auch Großwetterlagen, Bewölkung und die Beschaffenheit der 
+                Landfläche eine Rolle. Niederschläge können so lokal auftreten, dass es schwierig ist, an einem heißen 
+                Sommernachmittag vorherzusagen, welches Dorf gegen Abend von einem heftigen Gewitterguss erwischt wird und welches nicht.
+            </Typography>
+        </>
+    },
+    {
+        content: <>
+            <Typography variant="h3">Aggregierung von Messungen für langfristige Verallgemeinerungen</Typography>
+            <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
+            Um von der Momentaufnahme an einer Wetterstation zu einer längerfristigen Aussage über das Klima in einer Region wie der 
+            deutschen Nordseeküste zu kommen, werden die variablen Einzelwerte aggregiert. Stündliche Messungen werden zu Tageswerten, 
+            Monats- oder sogar Jahresmitteln verrechnet. Je nach Anwendung und Fragestellung ist dabei nicht nur der Mittelwert 
+            interessant, sondern z.B. die Minimal-/Maximaltemperatur oder die Niederschlagssumme.
+            </Typography>
+        </>
+    },
+    {
+        content: <>
+            <Typography variant="h2">
+                Langfristiges Klima einer Region - stabile Muster verändern sich
             </Typography>
         </>
     },
