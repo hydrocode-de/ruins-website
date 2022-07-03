@@ -23,14 +23,17 @@ function App() {
 
 
   // Page shortcuts
-  let H: React.ElementType;
+  let HomePage: React.ElementType;
   if (width < 1200) {
-    H =() => <Box><MobileHome /></Box>
+    HomePage =() => <Box><MobileHome /></Box>
   } else {
-    H = () => <Box><Home /></Box>
+    HomePage = () => <Box><Home /></Box>
   }
-  const U = () => <Box><StreamlitPage src="http://116.203.189.3:42003" title="Uncertainty and Risk" /></Box>
-  const W = () => <Box><StreamlitPage src="http://116.203.189.3:42001" title="Weather and Climate" /></Box>
+  
+  // streamlit apps
+  const Uncertainty = () => <Box><StreamlitPage src="http://116.203.189.3:42003" title="Uncertainty and Risk" /></Box>
+  const Weather = () => <Box><StreamlitPage src="http://116.203.189.3:42001" title="Weather and Climate" /></Box>
+  const Sunburst = () => <Box><StreamlitPage src="http://116.203.189.3:42010" title="Climate Model Overview" /></Box>
 
   return (
     <>
@@ -42,13 +45,15 @@ function App() {
 
 
         <Routes location={location}>
-          <Route path="/" element={<H />}/>
+          <Route path="/" element={<HomePage />}/>
 
-          <Route path="/app/uncertainty" element={<U />} />
+          <Route path="/app/uncertainty" element={<Uncertainty />} />
 
-          <Route path="/app/weather" element={<W />} />
+          <Route path="/app/weather" element={<Weather />} />
 
-          <Route path="*" element={<H />} />
+          <Route path="/app/sunburst" element={<Sunburst />} />
+
+          <Route path="*" element={<HomePage />} />
 
         </Routes>
         

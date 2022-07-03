@@ -15,20 +15,21 @@ const ScrollButtonArea: React.FC = () => {
                 bottom: 0,
                 display: 'flex',
                 justifyContent: 'space-between',
+                alignItems: 'end',
                 pb: 1,
-                hieght: '500px'
+                height: '20vh'
             }}
         >
             <Box></Box>
             <Zoom in={inView} timeout={400}>
-                <Box>   
-                    <ScrollButton mode="pageDown" color="primary" style={{marginRight: '1rem'}} variant="extended" />
-                    <ScrollButton mode="pageUp" color="primary" style={{marginRight: '1rem'}} variant="extended" />
+                <Box>
+                    <ScrollButton mode="pageDown" color="default" style={{marginRight: '1rem'}} variant="extended" addKeyEvent />
+                    <ScrollButton mode="pageUp" color="default" style={{marginRight: '1rem'}} variant="extended" addKeyEvent />
                 </Box>
             </Zoom>
             <Zoom in={inView} timeout={600}>
                 <Box sx={{mr: '1.5rem'}}>
-                    <ScrollButton mode="top" color="secondary" />
+                    <ScrollButton mode="top" color="default" />
                 </Box>
             </Zoom>
         </Box>
