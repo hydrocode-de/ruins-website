@@ -28,8 +28,7 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                         <Typography variant="caption">Uncertainty and Risk</Typography>
                     </StepButton>
                     <StepContent>
-                        <Typography> First topic bla </Typography>
-                        <Button onClick={() => navigate('/app/uncertainty')}>Open App</Button>
+                        <Button variant="contained" onClick={() => navigate('/app/uncertainty')}>Open App</Button>
                     </StepContent>
                 </Step>
 
@@ -38,8 +37,7 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                         <Typography variant="caption">Weather and Climate</Typography>
                     </StepButton>
                     <StepContent>
-                    <Typography variant="caption"> First topic bla </Typography><br />
-                        <Button variant="outlined" onClick={() => navigate('/app/weather')}>Open App</Button>
+                        <Button variant="contained" onClick={() => navigate('/app/weather')}>Open App</Button>
                     </StepContent>
                 </Step>
 
@@ -48,7 +46,7 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                         <Typography variant="caption">Agriculture</Typography>
                     </StepButton>
                     <StepContent>
-                        <Typography> Third topic bla </Typography>
+                        <Button variant="contained" disabled>Open App</Button>
                     </StepContent>
                 </Step>
 
@@ -57,7 +55,7 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                         <Typography variant="caption">Extremes</Typography>
                     </StepButton>
                     <StepContent>
-                        <Typography> Fourth topic bla </Typography>
+                        <Button variant="contained" onClick={() => navigate('/app/extremes')}>Open App</Button>
                     </StepContent>
                 </Step>
 
@@ -66,7 +64,7 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                         <Typography variant="caption">Other / Not specified</Typography>
                     </StepButton>
                     <StepContent>
-                        <Typography> Fifth topic bla </Typography>
+                        <Button variant="contained" disabled>Open App</Button>
                     </StepContent>
                 </Step>
 
