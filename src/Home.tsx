@@ -5,13 +5,15 @@ import { InView } from 'react-intersection-observer'
 import AppHeader from "./components/AppHeader"
 import SideStepper from "./components/SideStepper";
 import { TOPICS, TOPIC_TYPE } from './topics.model';
+import ScrollButtonArea from './components/ScrollButtonArea';
 
 
 // import the Topics
 import UncertaintyTopic from './topics/Uncertainty';
 import WeatherClimate from './topics/WeatherClimate';
 import TemperatureShift from './topics/TemperatureShift';
-import ScrollButtonArea from './components/ScrollButtonArea';
+import LanduseTopic from './topics/Landuse';
+import ExtremesTopic from './topics/Extremes';
 
 
 const Home = () => {
@@ -52,11 +54,15 @@ const Home = () => {
                     </InView>
                     
                     <InView onChange={( inView ) => inView ? setActiveTopic('agriculture') : null} >
-                        <Box ref={TOPICS.agriculture} sx={{height: '100vh', backgroundColor: 'yellow', width: '100%'}} />
+                        <Box ref={TOPICS.agriculture}>
+                            <LanduseTopic />
+                        </Box>
                     </InView>
 
                     <InView onChange={( inView ) => inView ? setActiveTopic('extremes') : null} >
-                        <Box ref={TOPICS.extremes} sx={{height: '100vh', backgroundColor: 'lightsalmon', width: '100%'}} />
+                        <Box ref={TOPICS.extremes}>
+                            <ExtremesTopic />
+                        </Box>
                     </InView>
 
                     <InView onChange={( inView ) => inView ? setActiveTopic('other') : null} >
