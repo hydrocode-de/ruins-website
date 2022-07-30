@@ -46,7 +46,7 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                         <Typography variant="caption">Agriculture</Typography>
                     </StepButton>
                     <StepContent>
-                        <Button variant="contained" disabled>Open App</Button>
+                        <Button variant="contained" onClick={() => navigate('/app/landuse')}>Open App</Button>
                     </StepContent>
                 </Step>
 
