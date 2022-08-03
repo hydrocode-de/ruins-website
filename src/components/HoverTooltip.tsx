@@ -14,7 +14,7 @@ interface HoverTooltipProps {
 const HoverTooltip: React.FC<React.PropsWithChildren<HoverTooltipProps>> = ({ children, wikipedia, img, linkName }) => {
     // define the anchor element
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
-    const [bodyText, setBodyText] = useState<string>('no text available');
+    const [bodyText, setBodyText] = useState<any>('no text available');
     const [imgSrc, setImgSrc] = useState<string | null>(null);
 
     // determine language settings
@@ -85,10 +85,18 @@ const HoverTooltip: React.FC<React.PropsWithChildren<HoverTooltipProps>> = ({ ch
                 </div>
                 <Box sx={{display: 'flex', flexDirection: 'column'}}>
                     <Typography variant="caption" component="p" sx={{p: '1rem'}}>{ bodyText }</Typography>
+                    { wikipedia ? <>
+                    <Typography variant="caption" component="p" sx={{m: 'auto'}}>
+                        <a href={`https://${lang}.wikipedia.org/wiki/${wikipedia}`} target="blank">
+                            <LaunchOutlined fontSize="small" sx={{fontSize: '1rem', verticalAlign: 'middle'}} />
+                            {lang==='en' ? 'source: Wikipedia page' : 'Quelle: Wikipedia Seite'}
+                        </a>
+                        </Typography>
+                    </> : null}
                 </Box>
                 <CardMedia
                     component="img"
-                    sx={{width: '150px', height: '150px'}}
+                    sx={{maxWidth: '200px', maxHeight: '200px'}}
                     image={imgSrc}
                     alt="Preview Image"
                 />
@@ -102,7 +110,7 @@ const HoverTooltip: React.FC<React.PropsWithChildren<HoverTooltipProps>> = ({ ch
                 aria-owns={open ? 'mouse-over-popover' : undefined}
                 aria-haspopup="true"
                 onMouseEnter={handlePopoverOpen}
-                /* onMouseLeave={handlePopoverClose} */
+                // onMouseLeave={handlePopoverClose}
             >
                 <strong>&nbsp;<LaunchOutlined fontSize="small" sx={{fontSize: '1rem', verticalAlign: 'text-bottom'}} />{ link }&nbsp;</strong>
             </span>
