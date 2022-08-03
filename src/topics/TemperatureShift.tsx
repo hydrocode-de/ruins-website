@@ -33,7 +33,7 @@ const steps_de: TopicStep[] = [
             <Typography variant="h3">Es wird wärmer</Typography>
             <Typography variant="body2" component="div" sx={{marginTop: '2rem'}}>
                 Durch den Klimawandel wird es wärmer. In der Abbildung ist die mittlere Temperatur der 
-                <HoverTooltip img="https://upload.wikimedia.org/wikipedia/commons/7/74/Normal_Distribution_PDF.svg" wikipedia="https://de.wikipedia.org/api/rest_v1/page/summary/Normalverteilung">Verteilung</HoverTooltip> 
+                <HoverTooltip img="https://upload.wikimedia.org/wikipedia/commons/7/74/Normal_Distribution_PDF.svg" wikipedia="Normalverteilung">Verteilung</HoverTooltip> 
                 um gerade einmal <strong style={{fontSize: '1.rem'}}>1,5 °C</strong> verschoben. 
                 Alleine diese Verschiebung hat bereits mehr heiße Tage zur Folge.
             </Typography>
@@ -49,7 +49,7 @@ const steps_de: TopicStep[] = [
         content: <>
             <Typography variant="h3">Die Variabilität nimmt zu</Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
-                Wenn wir die <HoverTooltip wikipedia="https://de.wikipedia.org/api/rest_v1/page/summary/Varianz">Varianz</HoverTooltip> der Verteilung von Tagestemperaturen erhöhen,
+                Wenn wir die <HoverTooltip wikipedia="Varianz">Varianz</HoverTooltip> der Verteilung von Tagestemperaturen erhöhen,
                 werden die Schwänze der Verteilung fetter. Nun sind bereits wieder Frosttage zu sehen.
                 Gelichzeitig hat diese Veränderung aber noch mehr heiße, und sogar einige tropische 
                 Tage zur Folge. 

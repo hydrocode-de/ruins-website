@@ -2,6 +2,8 @@ import { Box, Card, CardMedia, IconButton, Popover, Typography } from "@mui/mate
 import React, { useState } from "react";
 import axios from 'axios';
 import { Close, LaunchOutlined } from '@mui/icons-material';
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
 
 interface HoverTooltipProps {
     text?: string;
@@ -13,6 +15,9 @@ const HoverTooltip: React.FC<React.PropsWithChildren<HoverTooltipProps>> = ({ ch
     // define the anchor element
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
     const [bodyText, setBodyText] = useState<string>('no text available');
+
+    // determine language settings
+    const lang = useSelector((state: RootState) => state.settings.lang);
 
     // popover handlers
     const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -27,7 +32,8 @@ const HoverTooltip: React.FC<React.PropsWithChildren<HoverTooltipProps>> = ({ ch
     const open = Boolean(anchorEl);
 
     if (wikipedia) {
-        axios.get(wikipedia).then(res => {
+        const apiUrl = `https://${lang}.wikipedia.org/api/rest_v1/page/summary/${wikipedia}`
+        axios.get(apiUrl).then(res => {
             if (res.data.extract) {
                 setBodyText(res.data.extract);
             } else {
