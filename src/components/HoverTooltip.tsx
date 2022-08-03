@@ -65,7 +65,7 @@ const HoverTooltip: React.FC<React.PropsWithChildren<HoverTooltipProps>> = ({ ch
     // build the content
     let hoverBody: any;
 
-    if (bodyText && !img) {
+    if (bodyText && !imgSrc) {
         hoverBody = (
             <div style={{maxWidth: '600px'}}>
             <div style={{position: 'absolute', right: 0}}>
@@ -77,7 +77,7 @@ const HoverTooltip: React.FC<React.PropsWithChildren<HoverTooltipProps>> = ({ ch
                 </Typography>
             </div>
         );
-    } else if (bodyText && img ) {
+    } else if (bodyText && imgSrc ) {
         hoverBody = (
             <Card sx={{display: 'flex', maxWidth: '600px'}}>
                 <div style={{position: 'absolute', right: 0}}>
@@ -89,7 +89,7 @@ const HoverTooltip: React.FC<React.PropsWithChildren<HoverTooltipProps>> = ({ ch
                 <CardMedia
                     component="img"
                     sx={{width: '150px', height: '150px'}}
-                    image={img}
+                    image={imgSrc}
                     alt="Preview Image"
                 />
             </Card>
