@@ -15,6 +15,7 @@ const HoverTooltip: React.FC<React.PropsWithChildren<HoverTooltipProps>> = ({ ch
     // define the anchor element
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
     const [bodyText, setBodyText] = useState<string>('no text available');
+    const [imgSrc, setImgSrc] = useState<string | null>(null);
 
     // determine language settings
     const lang = useSelector((state: RootState) => state.settings.lang);
@@ -40,14 +41,25 @@ const HoverTooltip: React.FC<React.PropsWithChildren<HoverTooltipProps>> = ({ ch
     if (wikipedia) {
         const apiUrl = `https://${lang}.wikipedia.org/api/rest_v1/page/summary/${wikipedia}`
         axios.get(apiUrl).then(res => {
+            // get the summary
             if (res.data.extract) {
                 setBodyText(res.data.extract);
             } else {
                 setBodyText('The wikipedia extract cannot be found')
             }
+
+            // check if there is a img
+            if(res.data.originalimage?.source) {
+                setImgSrc(res.data.originalimage.source);
+            }
         });
     } else {
         setBodyText(children ? children : 'No Tooltip info available')
+    }
+
+    // overwrite imgSrc if necessary
+    if (img) {
+        setImgSrc(img);
     }
 
     // build the content
