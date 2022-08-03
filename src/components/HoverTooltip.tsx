@@ -6,12 +6,12 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store";
 
 interface HoverTooltipProps {
-    text?: string;
     wikipedia?: string;
     img?: string;
+    linkName?: string;
 }
 
-const HoverTooltip: React.FC<React.PropsWithChildren<HoverTooltipProps>> = ({ children, text, wikipedia, img }) => {
+const HoverTooltip: React.FC<React.PropsWithChildren<HoverTooltipProps>> = ({ children, wikipedia, img, linkName }) => {
     // define the anchor element
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
     const [bodyText, setBodyText] = useState<string>('no text available');
@@ -31,6 +31,12 @@ const HoverTooltip: React.FC<React.PropsWithChildren<HoverTooltipProps>> = ({ ch
     // determine open state
     const open = Boolean(anchorEl);
 
+    // get the linkName
+    let link: string = 'external link';
+    if (linkName) {
+        link = linkName;
+    }
+
     if (wikipedia) {
         const apiUrl = `https://${lang}.wikipedia.org/api/rest_v1/page/summary/${wikipedia}`
         axios.get(apiUrl).then(res => {
@@ -41,7 +47,7 @@ const HoverTooltip: React.FC<React.PropsWithChildren<HoverTooltipProps>> = ({ ch
             }
         });
     } else {
-        setBodyText(text ? text : 'No Tooltip info available')
+        setBodyText(children ? children : 'No Tooltip info available')
     }
 
     // build the content
@@ -86,7 +92,7 @@ const HoverTooltip: React.FC<React.PropsWithChildren<HoverTooltipProps>> = ({ ch
                 onMouseEnter={handlePopoverOpen}
                 /* onMouseLeave={handlePopoverClose} */
             >
-                <strong>&nbsp;<LaunchOutlined fontSize="small" sx={{fontSize: '1rem', verticalAlign: 'text-bottom'}} />{ children }&nbsp;</strong>
+                <strong>&nbsp;<LaunchOutlined fontSize="small" sx={{fontSize: '1rem', verticalAlign: 'text-bottom'}} />{ link }&nbsp;</strong>
             </span>
             <Popover
                 open={open}
