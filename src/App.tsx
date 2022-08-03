@@ -35,6 +35,7 @@ function App() {
   const Weather = () => <Box><StreamlitPage src="http://116.203.189.3:42001" title="Weather and Climate" /></Box>
   const Sunburst = () => <Box><StreamlitPage src="http://116.203.189.3:42010" title="Climate Model Overview" /></Box>
   const Landuse = () => <Box><StreamlitPage src="http://116.203.189.3:42004" title="Landuse management under uncertainty"/></Box>
+  const Extemes = () => <Box><StreamlitPage src="http://116.203.189.3:42002" title="Extremes and Floods" /></Box>
 
   return (
     <>
@@ -55,6 +56,8 @@ function App() {
           <Route path="/app/sunburst" element={<Sunburst />} />
 
           <Route path="/app/landuse" element={<Landuse />} />
+
+          <Route path="/app/extremes" element={<Extemes />} />
 
           <Route path="*" element={<HomePage />} />
 

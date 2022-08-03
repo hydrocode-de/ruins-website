@@ -55,18 +55,18 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                         <Typography variant="caption">Extremes</Typography>
                     </StepButton>
                     <StepContent>
-                        <Button variant="contained" disabled>Open App</Button>
+                        <Button variant="contained" onClick={() => navigate('/app/extremes')}>Open App</Button>
                     </StepContent>
                 </Step>
 
-                <Step key="4">
+                {/* <Step key="4">
                     <StepButton color="inherit" onClick={() => jumpToTopic('other')}>
                         <Typography variant="caption">Other / Not specified</Typography>
                     </StepButton>
                     <StepContent>
                         <Button variant="contained" disabled>Open App</Button>
                     </StepContent>
-                </Step>
+                </Step> */}
 
             </Stepper>
         </Box>
