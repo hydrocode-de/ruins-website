@@ -1,7 +1,7 @@
 import { Box, Button, Card, CardContent, CardHeader, Step, StepButton, StepContent,  Stepper, Typography } from "@mui/material";
 import { TOPIC_TYPE } from "../topics.model";
 
-import { AgricultureOutlined, WbSunnyOutlined, FloodOutlined, BubbleChartOutlined } from '@mui/icons-material';
+import { Description, AgricultureOutlined, WbSunnyOutlined, FloodOutlined, BubbleChartOutlined } from '@mui/icons-material';
 import { useNavigate } from "react-router-dom";
 
 interface SideStepperProps {
@@ -10,11 +10,12 @@ interface SideStepperProps {
 }
 
 const TOPIC_ORDER = {
-    uncertainty: 0,
-    weather: 1,
-    agriculture: 2,
-    extremes: 3,
-    other: 4,
+    intro: 0,
+    uncertainty: 1,
+    weather: 2,
+    agriculture: 3,
+    extremes: 4,
+    other: 5,
 }
 
 const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) => {
@@ -24,6 +25,12 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
             <Stepper  orientation="vertical" activeStep={TOPIC_ORDER[activeTopic]} nonLinear>
 
                 <Step key="0">
+                    <StepButton color="inherit" onClick={() => jumpToTopic('intro')} icon={<Description />}>
+                        <Typography variant="caption">Intro</Typography>
+                    </StepButton>
+                </Step>
+
+                <Step key="1">
                     <StepButton color="inherit" onClick={() => jumpToTopic('uncertainty')} icon={<BubbleChartOutlined />}>
                         <Typography variant="caption">Uncertainty and Risk</Typography>
                     </StepButton>
@@ -32,7 +39,7 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                     </StepContent>
                 </Step>
 
-                <Step key="1">
+                <Step key="2">
                     <StepButton color="inherit" onClick={() => jumpToTopic('weather')} icon={<WbSunnyOutlined />}>
                         <Typography variant="caption">Weather and Climate</Typography>
                     </StepButton>
@@ -41,7 +48,7 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                     </StepContent>
                 </Step>
 
-                <Step key="2">
+                <Step key="3">
                     <StepButton color="inherit" onClick={() => jumpToTopic('agriculture')} icon={<AgricultureOutlined />}>
                         <Typography variant="caption">Agriculture</Typography>
                     </StepButton>
@@ -50,7 +57,7 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                     </StepContent>
                 </Step>
 
-                <Step key="3">
+                <Step key="4">
                     <StepButton color="inherit" onClick={() => jumpToTopic('extremes')} icon={<FloodOutlined />}>
                         <Typography variant="caption">Extremes</Typography>
                     </StepButton>
@@ -59,7 +66,7 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                     </StepContent>
                 </Step>
 
-                {/* <Step key="4">
+                {/* <Step key="5">
                     <StepButton color="inherit" onClick={() => jumpToTopic('other')}>
                         <Typography variant="caption">Other / Not specified</Typography>
                     </StepButton>
