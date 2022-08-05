@@ -1,8 +1,9 @@
 import { createRef } from "react";
 
-export type TOPIC_TYPE = 'uncertainty' | 'weather' | 'agriculture' | 'extremes' | 'other';
+export type TOPIC_TYPE = 'intro' | 'uncertainty' | 'weather' | 'agriculture' | 'extremes' | 'other';
 
 export const TOPICS = {
+    intro: createRef<HTMLElement>(),
     uncertainty: createRef<HTMLElement>(),
     weather: createRef<HTMLElement>(),
     agriculture: createRef<HTMLElement>(),
