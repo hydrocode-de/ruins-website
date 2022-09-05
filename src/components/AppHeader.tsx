@@ -1,5 +1,6 @@
 import { AppBar, Box, Toolbar, Typography } from "@mui/material";
 import LangSwitch from "./LangSwitch";
+import QuickAccessMenu from "./QuickAccessMenu";
 
 const AppHeader: React.FC = () => (
         <Box sx={{flexGrow: 1}}>
@@ -8,7 +9,10 @@ const AppHeader: React.FC = () => (
                     <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
                         RUINS 
                     </Typography>
-                    <LangSwitch />
+                    <Box>
+                        <QuickAccessMenu />
+                        <LangSwitch />
+                    </Box>
                 </Toolbar>
 
             </AppBar>

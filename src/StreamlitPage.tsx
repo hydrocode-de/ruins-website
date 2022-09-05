@@ -6,6 +6,7 @@ import { ArrowBack } from "@mui/icons-material";
 import StreamlitLoader from "./components/StreamlitLoader";
 import { RootState } from "./store";
 import LangSwitch from "./components/LangSwitch";
+import QuickAccessMenu from "./components/QuickAccessMenu";
 
 interface StreamlitPageProps {
     src: string;
@@ -26,7 +27,10 @@ const StreamlitPage: React.FC<StreamlitPageProps> = ({ src, title }) => {
                         <Typography variant="h6" component="div" sx={{flexGrow: 1, marginLeft: '1rem'}}>
                             { title }
                         </Typography>
-                        <LangSwitch />
+                        <Box>
+                            <QuickAccessMenu />
+                            <LangSwitch />
+                        </Box>
                     </Toolbar>
                 </AppBar>
             </Box>
