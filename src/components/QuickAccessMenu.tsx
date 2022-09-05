@@ -1,5 +1,5 @@
 import { Button, Divider, ListItemIcon, ListItemText, Menu, MenuItem } from "@mui/material";
-import { AgricultureOutlined, WbSunnyOutlined, FloodOutlined, BubbleChartOutlined } from '@mui/icons-material';
+import { WindPowerOutlined, FloodOutlined, BubbleChartOutlined, Public } from '@mui/icons-material';
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
@@ -41,16 +41,16 @@ const QuickAccessMenu: React.FC = () => {
                 
                 <MenuItem onClick={() => navigate('app/weather')}>
                     <ListItemIcon>
-                        <WbSunnyOutlined fontSize="small" />
+                        <Public fontSize="small" />
                     </ListItemIcon>
                     <ListItemText>Weather and Climate</ListItemText>
                 </MenuItem>
 
                 <MenuItem onClick={() => navigate('app/landuse')}>
                     <ListItemIcon>
-                        <AgricultureOutlined fontSize="small" />
+                        <WindPowerOutlined fontSize="small" />
                     </ListItemIcon>
-                    <ListItemText>Landuse</ListItemText>
+                    <ListItemText>Windpower and Landuse</ListItemText>
                 </MenuItem>
 
 
