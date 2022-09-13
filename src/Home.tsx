@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Typography, Zoom } from "@mui/material";
 import { InView } from 'react-intersection-observer'
 
 import AppHeader from "./components/AppHeader"
@@ -14,9 +14,14 @@ import WeatherClimate from './topics/WeatherClimate';
 import TemperatureShift from './topics/TemperatureShift';
 import LanduseTopic from './topics/Landuse';
 import ExtremesTopic from './topics/Extremes';
+import { useSelector } from 'react-redux';
+import { RootState } from './store';
 
 
 const Home = () => {
+    // get the language
+    const lang = useSelector((state: RootState) =>  state.settings.lang);
+
     // create state for active topic
     const [activeTopic, setActiveTopic] = useState<TOPIC_TYPE>('uncertainty');
 
@@ -31,11 +36,40 @@ const Home = () => {
     return (
         <>
             <AppHeader />
+
+            <Box sx={{height: '100vh', width: '100%'}}>
+                <video loop autoPlay muted style={{width: '100%', height: '100vh', position: 'absolute', zIndex: -1, objectFit: 'cover'}} src="background.mov">
+                    {/* <source src="background.mov" type="video/mp4" /> */}
+                </video>
+                <Box sx={{width: '100%', height: '100%', backgroundColor: 'rgba(1,1,1,0.5)', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                
+                <InView>
+                    {({inView, ref}) => (
+                        <Box ref={ref}>
+                            <Zoom in={inView} style={{transitionDuration: '0.8s', transitionDelay: '400ms'}}>
+                                <Typography variant="h1" sx={{color: 'white', textAlign: 'center'}}>Uncertainty Matters</Typography>
+                            </Zoom>
+
+                            <Zoom in={inView} style={{transitionDuration: '0.6s', transitionDelay: '800ms'}}>
+                                <Typography variant="h4" sx={{color: 'white', marginTop: '4rem', textAlign: 'center', maxWidth: '50vw'}}>
+                                    {lang === 'en' ? (
+                                        'Making decisions for a future under climate change'
+                                    ) : (
+                                        'Anpassungsentscheidungen für eine Zukunft mit dem globalen Wandel'
+                                    )}
+                                </Typography>
+                            </Zoom>
+                        </Box>
+                    )}
+                </InView>
+                
+                </Box>
+            </Box>
             
-            <Grid container spacing={1} sx={{paddingTop: '64px'}}>
+            <Grid container spacing={0}>
                 
                 <Grid item xs={2}>
-                    <Box sx={{position: 'fixed', padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+                    <Box sx={{position: 'sticky', top: 0, padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                     <SideStepper jumpToTopic={scrollHandler} activeTopic={activeTopic} />    
                     </Box>
                 </Grid>
