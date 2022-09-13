@@ -23,7 +23,7 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
         <Box sx={{height: 'calc(100vh - 120px)', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
             <Stepper  orientation="vertical" activeStep={TOPIC_ORDER[activeTopic]} nonLinear>
 
-                <Step key="0">
+                <Step key="1">
                     <StepButton color="inherit" onClick={() => jumpToTopic('uncertainty')} icon={<BubbleChartOutlined />}>
                         <Typography variant="caption">Uncertainty and Risk</Typography>
                     </StepButton>
