@@ -1,7 +1,7 @@
-import { Box, Button, Card, CardContent, CardHeader, Step, StepButton, StepContent,  Stepper, Typography } from "@mui/material";
+import { Box, Button, Step, StepButton, StepContent,  Stepper, Typography } from "@mui/material";
 import { TOPIC_TYPE } from "../topics.model";
 
-import { AgricultureOutlined, WbSunnyOutlined, FloodOutlined, BubbleChartOutlined } from '@mui/icons-material';
+import { WindPowerOutlined, Public, FloodOutlined, BubbleChartOutlined } from '@mui/icons-material';
 import { useNavigate } from "react-router-dom";
 
 interface SideStepperProps {
@@ -33,7 +33,7 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                 </Step>
 
                 <Step key="1">
-                    <StepButton color="inherit" onClick={() => jumpToTopic('weather')} icon={<WbSunnyOutlined />}>
+                    <StepButton color="inherit" onClick={() => jumpToTopic('weather')} icon={<Public />}>
                         <Typography variant="caption">Weather and Climate</Typography>
                     </StepButton>
                     <StepContent>
@@ -42,8 +42,8 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                 </Step>
 
                 <Step key="2">
-                    <StepButton color="inherit" onClick={() => jumpToTopic('agriculture')} icon={<AgricultureOutlined />}>
-                        <Typography variant="caption">Agriculture</Typography>
+                    <StepButton color="inherit" onClick={() => jumpToTopic('agriculture')} icon={<WindPowerOutlined />}>
+                        <Typography variant="caption">Windpower and Landuse</Typography>
                     </StepButton>
                     <StepContent>
                         <Button variant="contained" onClick={() => navigate('/app/landuse')}>Open App</Button>
