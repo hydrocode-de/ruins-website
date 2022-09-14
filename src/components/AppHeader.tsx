@@ -26,8 +26,13 @@ const AppHeader: React.FC<AppHeaderProps> = ({ transition, backLink }) => {
                     {backLink ? (
                         <Button>back</Button>
                     ) : (
-                        <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
-                        {startView ? '' : 'Uncertainty matters'}
+                        <Typography variant="h1" component="div" sx={{
+                            flexGrow: 1,
+                            fontSize: startView ? '4rem' : '1.3rem',
+                            color: startView ? 'white' : 'inherit',
+                            transition: '1s ease-in-out'
+                        }}>
+                            Uncertainty Matters
                         </Typography>
                     )}
                     
