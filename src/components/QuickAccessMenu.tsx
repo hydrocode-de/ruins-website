@@ -61,11 +61,11 @@ const QuickAccessMenu: React.FC = () => {
                     <ListItemText>Flood and extremes</ListItemText>
                 </MenuItem>
 
-                <Divider />
+                {/* <Divider />
                 <MenuItem onClick={() => navigate('imprint')}>
                     {lang === 'en' ? 'Imprint (de)' : 'Impressum'}
                 </MenuItem>
-                <MenuItem>{lang === 'en' ? 'Privacy Policy (de)' : 'Datenschutzerklärung'}</MenuItem>
+                <MenuItem>{lang === 'en' ? 'Privacy Policy (de)' : 'Datenschutzerklärung'}</MenuItem> */}
 
 
             </Menu>

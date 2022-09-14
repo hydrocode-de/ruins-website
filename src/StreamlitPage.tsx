@@ -1,4 +1,4 @@
-import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box,  IconButton, Toolbar, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ArrowBack } from "@mui/icons-material";
@@ -7,6 +7,7 @@ import StreamlitLoader from "./components/StreamlitLoader";
 import { RootState } from "./store";
 import LangSwitch from "./components/LangSwitch";
 import QuickAccessMenu from "./components/QuickAccessMenu";
+import AppFooter from "./components/AppFooter";
 
 interface StreamlitPageProps {
     src: string;
@@ -35,9 +36,11 @@ const StreamlitPage: React.FC<StreamlitPageProps> = ({ src, title }) => {
                 </AppBar>
             </Box>
 
-            <Box sx={{margin:0, marginTop: '64px', padding: 0, width: '100vw', height: 'calc(100vh - 64px)'}}>
+            <Box sx={{margin:0, marginTop: '64px', padding: 0, width: '100vw', height: 'calc(100vh - 64px - 30px)'}}>
                 <StreamlitLoader src={`${src}?layout=wide&lang=${lang}`} title={title} />
            </Box>
+
+            <AppFooter />
         </> 
     );
 }

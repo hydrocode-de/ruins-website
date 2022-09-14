@@ -16,6 +16,7 @@ import LanduseTopic from './topics/Landuse';
 import ExtremesTopic from './topics/Extremes';
 import { useSelector } from 'react-redux';
 import { RootState } from './store';
+import AppFooter from './components/AppFooter';
 
 
 const Home = () => {
@@ -107,6 +108,8 @@ const Home = () => {
             </Grid>
 
             <ScrollButtonArea />
+
+            <AppFooter />
         </>
     )
 }
