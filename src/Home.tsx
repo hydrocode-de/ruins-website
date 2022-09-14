@@ -52,16 +52,24 @@ const Home = () => {
                     {({inView, ref}) => (
                         <Box ref={ref}>
                             <Zoom in={inView} style={{transitionDuration: '0.8s', transitionDelay: '400ms'}}>
-                                <Typography variant="h1" sx={{color: 'white', textAlign: 'center'}}>Uncertainty Matters</Typography>
-                            </Zoom>
-
-                            <Zoom in={inView} style={{transitionDuration: '0.6s', transitionDelay: '800ms'}}>
-                                <Typography variant="h4" sx={{color: 'white', marginTop: '4rem', textAlign: 'center', maxWidth: '50vw'}}>
+                            <Typography variant="h4" sx={{color: 'white', marginTop: '4rem', textAlign: 'center', maxWidth: '60vw'}}>
                                     {lang === 'en' ? (
                                         'Making decisions for a future under climate change'
                                     ) : (
                                         'Anpassungsentscheidungen für eine Zukunft mit dem globalen Wandel'
                                     )}
+                                </Typography>
+                            </Zoom>
+                            
+                            <Zoom in={inView} style={{transitionDuration: '0.6s', transitionDelay: '800ms'}}>
+                                <Typography variant="h4">
+                                    Wie kommen wir trotz unvollständiger Information zum überzeugten Handeln?
+                                </Typography>
+                            </Zoom>
+
+                            <Zoom in={inView} style={{transitionDuration: '400ms', transitionDelay: '2s', marginTop: '1rem'}}>
+                                <Typography variant="body1">
+                                    Die Anpassung an und Vorbereitung auf Veränderungen durch den Klimawandel erfordert Entscheidungen auf Basis von unsicheren Informationen über die Zukunft. 
                                 </Typography>
                             </Zoom>
                         </Box>
