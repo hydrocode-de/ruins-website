@@ -1,22 +1,26 @@
 import { useState } from 'react';
 import { Box, Grid, Typography, Zoom } from "@mui/material";
 import { InView } from 'react-intersection-observer'
+import { useSelector } from 'react-redux';
+import { RootState } from './store';
 
+// load components
 import AppHeader from "./components/AppHeader"
+import AppFooter from './components/AppFooter';
 import SideStepper from "./components/SideStepper";
 import { TOPICS, TOPIC_TYPE } from './topics.model';
 import ScrollButtonArea from './components/ScrollButtonArea';
 
 
 // import the Topics
+import Introduction from './topics/Intro';
 import UncertaintyTopic from './topics/Uncertainty';
 import WeatherClimate from './topics/WeatherClimate';
 import TemperatureShift from './topics/TemperatureShift';
 import LanduseTopic from './topics/Landuse';
 import ExtremesTopic from './topics/Extremes';
-import { useSelector } from 'react-redux';
-import { RootState } from './store';
-import AppFooter from './components/AppFooter';
+import Windpower from './topics/Windpower';
+
 
 
 const Home = () => {
@@ -24,7 +28,7 @@ const Home = () => {
     const lang = useSelector((state: RootState) =>  state.settings.lang);
 
     // create state for active topic
-    const [activeTopic, setActiveTopic] = useState<TOPIC_TYPE>('uncertainty');
+    const [activeTopic, setActiveTopic] = useState<TOPIC_TYPE>('info');
 
     // The SideStetter needs a handler that sets active topic and scrolls
     const scrollHandler = (topic: TOPIC_TYPE) => {
@@ -77,6 +81,12 @@ const Home = () => {
 
                 <Grid item xs={10} sx={{backgroundColor: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center'}}>
                     
+                    <InView onChange={( inView ) => inView ? setActiveTopic('info') : null}>
+                        <Box ref={TOPICS.info}>
+                            <Introduction />
+                        </Box>
+                    </InView>
+                    
                     <InView onChange={( inView ) => inView ? setActiveTopic('uncertainty') : null} >
                         <Box ref={TOPICS.uncertainty}>
                             <UncertaintyTopic />
@@ -91,6 +101,12 @@ const Home = () => {
                     <InView onChange={( inView ) => inView ? setActiveTopic('agriculture') : null} >
                         <Box ref={TOPICS.agriculture}>
                             <LanduseTopic />
+                        </Box>
+                    </InView>
+
+                    <InView onChange={( inView ) => inView ? setActiveTopic('wind') : null} >
+                        <Box ref={TOPICS.wind}>
+                            <Windpower />
                         </Box>
                     </InView>
 
