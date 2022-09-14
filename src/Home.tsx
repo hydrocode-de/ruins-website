@@ -35,7 +35,7 @@ const Home = () => {
 
     return (
         <>
-            <AppHeader />
+            <AppHeader transition />
 
             <Box sx={{height: '100vh', width: '100%'}}>
                 <video loop autoPlay muted style={{width: '100%', height: '100vh', position: 'absolute', zIndex: -1, objectFit: 'cover'}} src="background.mov">

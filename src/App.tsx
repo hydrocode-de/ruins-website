@@ -10,6 +10,7 @@ import './App.css';
 import Home from './Home';
 import MobileHome from './MobileHome';
 import StreamlitPage from './StreamlitPage';
+import ImprintPage from './static/Imprint';
 
 
 
@@ -58,6 +59,8 @@ function App() {
           <Route path="/app/landuse" element={<Landuse />} />
 
           <Route path="/app/extremes" element={<Extemes />} />
+
+          <Route path="/imprint" element={<ImprintPage />} />
 
           <Route path="*" element={<HomePage />} />
 

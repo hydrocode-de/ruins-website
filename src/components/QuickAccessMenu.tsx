@@ -62,8 +62,10 @@ const QuickAccessMenu: React.FC = () => {
                 </MenuItem>
 
                 <Divider />
-                <MenuItem>{lang === 'en' ? 'Imprint' : 'Impressum'}</MenuItem>
-                <MenuItem>{lang === 'en' ? 'Privacy Policy' : 'Datenschutzerklärung'}</MenuItem>
+                <MenuItem onClick={() => navigate('imprint')}>
+                    {lang === 'en' ? 'Imprint (de)' : 'Impressum'}
+                </MenuItem>
+                <MenuItem>{lang === 'en' ? 'Privacy Policy (de)' : 'Datenschutzerklärung'}</MenuItem>
 
 
             </Menu>
