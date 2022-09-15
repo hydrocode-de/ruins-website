@@ -46,13 +46,21 @@ const Home = () => {
                 <video loop autoPlay muted style={{width: '100%', height: '100vh', position: 'absolute', zIndex: -1, objectFit: 'cover'}} src="background.mov">
                     {/* <source src="background.mov" type="video/mp4" /> */}
                 </video>
-                <Box sx={{width: '100%', height: '100%', backgroundColor: 'rgba(1,1,1,0.5)', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                
                 
                 <InView>
                     {({inView, ref}) => (
-                        <Box ref={ref}>
+                        <Box ref={ref} sx={{
+                            width: '100%', 
+                            height: '100%', 
+                            backgroundColor: 'rgba(1,1,1,0.5)', 
+                            display: 'flex', 
+                            justifyContent: 'space-around', 
+                            alignItems: 'center',
+                            flexDirection: 'column'
+                        }}>
                             <Zoom in={inView} style={{transitionDuration: '0.8s', transitionDelay: '400ms'}}>
-                            <Typography variant="h4" sx={{color: 'white', marginTop: '4rem', textAlign: 'center', maxWidth: '60vw'}}>
+                            <Typography variant="h4" sx={{color: 'white', marginTop: '5rem', textAlign: 'center', maxWidth: '60vw'}}>
                                     {lang === 'en' ? (
                                         'Making decisions for a future under climate change'
                                     ) : (
@@ -61,22 +69,24 @@ const Home = () => {
                                 </Typography>
                             </Zoom>
                             
-                            <Zoom in={inView} style={{transitionDuration: '0.6s', transitionDelay: '800ms'}}>
-                                <Typography variant="h4">
-                                    Wie kommen wir trotz unvollständiger Information zum überzeugten Handeln?
-                                </Typography>
-                            </Zoom>
+                            <Box sx={{maxWidth: '40vw'}}>
+                                <Zoom in={inView} style={{color: 'white', transitionDuration: '0.6s', transitionDelay: '1.2s'}}>
+                                    <Typography variant="h4">
+                                        Wie kommen wir trotz unvollständiger Information zum überzeugten Handeln?
+                                    </Typography>
+                                </Zoom>
 
-                            <Zoom in={inView} style={{transitionDuration: '400ms', transitionDelay: '2s', marginTop: '1rem'}}>
-                                <Typography variant="body1">
-                                    Die Anpassung an und Vorbereitung auf Veränderungen durch den Klimawandel erfordert Entscheidungen auf Basis von unsicheren Informationen über die Zukunft. 
-                                </Typography>
-                            </Zoom>
+                                <Zoom in={inView} style={{color: 'white', transitionDuration: '400ms', transitionDelay: '1.6s', marginTop: '1rem'}}>
+                                    <Typography variant="body1">
+                                        Die Anpassung an und Vorbereitung auf Veränderungen durch den Klimawandel erfordert Entscheidungen auf Basis von unsicheren Informationen über die Zukunft. 
+                                    </Typography>
+                                </Zoom>
+                            </Box>
                         </Box>
                     )}
                 </InView>
                 
-                </Box>
+                
             </Box>
             
             <Grid container spacing={0}>
