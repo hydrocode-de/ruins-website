@@ -20,9 +20,8 @@ import { TopicStep } from "../topics.model";
 const steps_de: TopicStep[] = [
     {
         content: <>
-            <Typography variant="h1">Unsicherheit und Risiko</Typography>
-            <Typography variant="h3"sx={{marginTop: '5rem'}}>Die Schranke des Grauens</Typography>
-            <Typography variant="body2" component="p" sx={{marginTop: '3rem'}}>
+            <Typography variant="h3">Die Schranke des Grauens</Typography>
+            <Typography variant="body1" component="p" sx={{marginTop: '3rem'}}>
                 Stellen Sie sich vor, von Ihrem Wohnort zu Ihrem Arbeitsplatz gibt es zwei Routen: 
                 Der kürzeste Weg (Option A) führt über einen Bahnübergang und wenn die Schranke offen ist, 
                 brauchen Sie 15 Minuten. Wenn die Schranke geschlossen ist, verursacht das oft einen langen 
@@ -30,7 +29,7 @@ const steps_de: TopicStep[] = [
                 Dann dauert die Fahrt zwar etwas länger (25 Minuten), aber Sie riskieren nicht, 
                 lange an der Schranke im Stau zu stehen. 
             </Typography>
-            <Typography variant="body2" component="p">
+            <Typography variant="body1" component="p">
                 Ob die Schranke geschlossen sein wird oder nicht, lässt sich nicht vorhersagen, 
                 aber Sie müssen sich an der Wegkreuzung für eine der beiden Routen entscheiden- welche nehmen Sie?
             </Typography>
@@ -114,16 +113,22 @@ const Uncertainty: React.FC = () => {
     const steps = lang === 'de' ? steps_de : steps_en;
     
     return (
-        <Grid container spacing={1}>
-            <Grid item xs={6}>
-                <TopicWrapper steps={steps}/>
-            </Grid>
+        <>
+            <Typography variant="h1" component="div" sx={{mt: 3}}>
+                {lang==='en' ? 'Uncertainty and Risk' : 'Unsicherheit und Risiko'}
+            </Typography>
+            <Grid container spacing={1}>
+                <Grid item xs={6}>
+                    <TopicWrapper steps={steps}/>
+                </Grid>
 
-            <Grid item xs={6}>
-                <StepImage />
-            </Grid>
+                <Grid item xs={6}>
+                    <StepImage />
+                </Grid>
 
-        </Grid>
+            </Grid>
+            <hr />
+        </>
         
     );
 }
