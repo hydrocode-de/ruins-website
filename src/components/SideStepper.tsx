@@ -60,7 +60,7 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                     </StepContent>
                 </Step>
 
-                <Step key="5">
+                <Step key="4">
                     <StepButton color="inherit" onClick={() => jumpToTopic('wind')} icon={<WindPowerOutlined />}>
                         <Typography variant="caption">Windpower</Typography>
                     </StepButton>
