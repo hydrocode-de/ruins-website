@@ -107,8 +107,8 @@ const Home = () => {
                     
                     <InView onChange={( inView ) => inView ? setActiveTopic('uncertainty') : null} >
                         <Box ref={TOPICS.uncertainty}>
-                            <UncertaintyTopic />
                             <TemperatureShift />
+                            <UncertaintyTopic />
                         </Box>
                     </InView>
 

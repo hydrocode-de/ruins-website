@@ -114,9 +114,6 @@ const Uncertainty: React.FC = () => {
     
     return (
         <>
-            <Typography variant="h1" component="div" sx={{mt: 3}}>
-                {lang==='en' ? 'Uncertainty and Risk' : 'Unsicherheit und Risiko'}
-            </Typography>
             <Grid container spacing={1}>
                 <Grid item xs={6}>
                     <TopicWrapper steps={steps}/>
