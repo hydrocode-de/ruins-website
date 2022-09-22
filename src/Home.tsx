@@ -20,6 +20,7 @@ import TemperatureShift from './topics/TemperatureShift';
 import LanduseTopic from './topics/Landuse';
 import ExtremesTopic from './topics/Extremes';
 import Windpower from './topics/Windpower';
+import HoverTooltip from './components/HoverTooltip';
 
 
 
@@ -52,35 +53,60 @@ const Home = () => {
                     {({inView, ref}) => (
                         <Box ref={ref} sx={{
                             width: '100%', 
-                            height: '100%', 
+                            height: '100%',
+                            p: 3,
                             backgroundColor: 'rgba(1,1,1,0.5)', 
                             display: 'flex', 
-                            justifyContent: 'space-around', 
-                            alignItems: 'center',
+                            justifyContent: 'center', 
+                            alignItems: 'left',
                             flexDirection: 'column'
                         }}>
                             <Zoom in={inView} style={{transitionDuration: '0.8s', transitionDelay: '400ms'}}>
-                            <Typography variant="h4" sx={{color: 'white', marginTop: '5rem', textAlign: 'center', maxWidth: '60vw'}}>
+                            <Typography variant="h4" sx={{color: 'white', marginTop: '2rem'}}>
                                     {lang === 'en' ? (
-                                        'Making decisions for a future under climate change'
+                                        'Taking confident actions under incomplete Information'
                                     ) : (
-                                        'Anpassungsentscheidungen für eine Zukunft mit dem globalen Wandel'
+                                        'Wie kommen wir trotz unvollständiger Information zum überzeugten Handeln?'
                                     )}
                                 </Typography>
                             </Zoom>
                             
-                            <Box sx={{maxWidth: '40vw'}}>
-                                <Zoom in={inView} style={{color: 'white', transitionDuration: '0.6s', transitionDelay: '1.2s'}}>
-                                    <Typography variant="h4">
-                                        Wie kommen wir trotz unvollständiger Information zum überzeugten Handeln?
-                                    </Typography>
-                                </Zoom>
+                            <Box sx={{maxWidth: '60vw'}}>
 
                                 <Zoom in={inView} style={{color: 'white', transitionDuration: '400ms', transitionDelay: '1.6s', marginTop: '1rem'}}>
                                     <Typography variant="body1">
                                         Die Anpassung an und Vorbereitung auf Veränderungen durch den Klimawandel erfordert Entscheidungen auf Basis von unsicheren Informationen über die Zukunft. 
                                     </Typography>
                                 </Zoom>
+
+                                <Zoom in={inView} style={{color: 'white', transitionDuration: '400ms', transitionDelay: '1.7s'}}>
+                                    <Typography variant="body1">
+                                        Dass sich das Klima aktuell ändert und in Zukunft weiter ändern wird, ist <HoverTooltip linkName="Fakt" external="https://www.klimafakten.de/fakten-statt-behauptungen/fakt-ist" />, 
+                                        aber wie genau die Änderungen aussehen, ist mit großer Unsicherheit behaftet, d
+                                        ie z.B. aus unzureichendem Prozessverständnis und komplexem Zusammenwirken entsteht.
+                                    </Typography>
+                                </Zoom>
+
+                                <Zoom in={inView} style={{color: 'white', transitionDuration: '400ms', transitionDelay: '1.8s'}}>
+                                    <Typography variant="body1" component="p" sx={{marginTop: '0.5rem'}}>
+                                        Trotz dieser Unsicherheit müssen jetzt Entscheidungen über meist langfristige Anpassungsmaßnahmen getroffen werden,
+                                        bevor es dafür zu spät ist. Zwischen verschiedenen Handlungsoptionen mit ihrer jeweiligen Unsicherheit zu entscheiden,
+                                        ist eine besondere Herausforderung für die Gesellschaft. Zweifel wurden gezielt ausgenutzt und haben 
+                                        <HoverTooltip linkName="Handeln verhindert" external="https://www.spiegel.de/wissenschaft/mensch/lobbyismus-gegen-klimaschutz-die-macht-des-zweifels-gastbeitrag-a-1c8b7e6b-dd1d-43f1-8665-74f4bcfbd30c" img="https://cdn.prod.www.spiegel.de/images/84976374-c192-4552-87ab-2bc9d53e6511_w948_r1.778_fpx43_fpy23.webp" />
+                                    </Typography>
+                                </Zoom>
+
+                                <Zoom in={inView} style={{color: 'white', transitionDuration: '400ms', transitionDelay: '1.9s'}}>
+                                    <Typography variant="body1" component="p" sx={{marginTop: '0.5rem'}}>
+                                        Diese Herausforderung kann nur bewältigt werden, wenn sich Entscheidungsträger mit diesem komplexen Thema auseinandersetzen.
+                                        Da jedes Mitglied der Gesellschaft mit seinen Entscheidungen zur Reaktion auf den aktuellen Klimawandel beiträgt,
+                                        ist diese App bewusst an die breite Öffentlichkeit gerichtet und soll helfen, einen einfachen Zugang zu einem nicht
+                                        einfachen Thema zu finden. Zusätzlich sollen auch Fachpersonen die Möglichkeit erhalten, auf Ergebnisse und Daten aus unserem
+                                        Forschungsprojekt[L] zuzugreifen. Wir stellen unsere Ergebnisse entlang von drei Anwendungsbeispielen für reale 
+                                        Landmanagemententscheidungen in der Küstenregion Krummhörn vor.
+                                    </Typography>
+                                </Zoom>
+
                             </Box>
                         </Box>
                     )}
