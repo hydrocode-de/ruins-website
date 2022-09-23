@@ -1,10 +1,13 @@
-import { Grid, Typography } from "@mui/material";
+import { Button, Card, CardActionArea, CardActions, CardContent, Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import HoverTooltip from "../components/HoverTooltip";
 import StepImage from "../components/StepImage";
 import TopicWrapper from "../components/TopicWrapper";
 import { RootState } from "../store";
-import { TopicStep } from "../topics.model";
+import { TopicStep, TOPIC_TYPE } from "../topics.model";
+
+import { Agriculture, Flood, WindPower } from '@mui/icons-material';
+import { useNavigate } from "react-router-dom";
 
 /**
  * Build the text elements using React-MUI (material ui)
@@ -45,14 +48,18 @@ const steps_de: TopicStep[] = [
 const steps_en: TopicStep[] = steps_de;
 
 
-const Introduction: React.FC = () => {
+interface IntroductionProps {
+    scrollHandler: (type: TOPIC_TYPE) => void
+}
+
+const Introduction: React.FC<IntroductionProps> = ({ scrollHandler }) => {
     // get the correct steps
     const lang = useSelector((state: RootState) => state.settings.lang);
     const steps = lang === 'de' ? steps_de : steps_en;
 
     return (
         <>
-            <Grid container spacing={1}>
+            {/* <Grid container spacing={1}>
                 
                 <Grid item xs={6}>
                     <TopicWrapper steps={steps} />
@@ -60,8 +67,81 @@ const Introduction: React.FC = () => {
 
                 <Grid item xs={6}>
                     <StepImage />
+                </Grid> 
+            </Grid>
+                */}
+
+            <Grid container spacing={1} sx={{minHeight: 'calc(100vh - 64px)', alignItems: 'center', justifyContent: 'left'}}>
+                
+                <Grid item xs={12}>
+                    <Typography variant="body1" component="p" sx={{maxWidth: '768px'}}>
+                        Küstenregionen sind durch den steigenden Meeresspiegel besonders vom Klimawandel betroffen.
+                        An der deutschen Nordseeküste leben die Menschen schon lange mit dem Meer und nutzen aufwändige Entwässerungssysteme,
+                        um die Landschaft hinter dem Deich, die vielerorts unterhalb des aktuellen Meeresspiegels liegt,
+                        nutzbar und sicher bewohnbar zu machen. Doch diese Maßnahmen haben ihre technischen Grenzen, wenn vor dem Deich
+                        der Meeresspiegel ansteigt und Sturmfluten häufiger werden, hinter dem Deich winterliche Starkregenereignisse
+                        zu einer Überflutung des Hinterlandes führen und sommerliche Trockenperioden zunehmen. Wie genau verschiedene
+                        Anpassungsoptionen in unterschiedlichen Zukunftsszenarien wirken, und welche Rolle für die Handlungsentscheidung
+                        die Unsicherheit der Vorhersagen spielt, sind die Kernfragen dieses Forschungsprojekts.
+                    </Typography>
+                    <Typography variant="body1" component="p" sx={{marginTop: '0.5rem', maxWidth: '768px'}}>
+                        Mit diesem Wissen wollen wir dabei helfen, individuelle Entscheidungen angesichts einer unsicheren Zukunft treffen zu können:
+                    </Typography>
+                </Grid>
+
+                <Grid item xs={3}>
+                    <Card>
+                        <CardContent sx={{textAlign: 'center'}}>
+                            <WindPower sx={{fontSize: '6rem'}} />
+                            <Typography variant="h5">Windenergie</Typography>
+                            <Typography variant="body2">
+                            Welche Kombination von Turbinentypen bringt den größten Ertrag an Windenergie bei begrenzter Fläche?
+                            </Typography>
+                        </CardContent>
+                        <CardActionArea>
+                            <CardActions>
+                                <Button onClick={() => scrollHandler('wind')} >{lang === 'en' ? 'VISIT TOPIC' : 'ZUM THEMA' }</Button>
+                            </CardActions>
+                        </CardActionArea>
+                    </Card>
+                </Grid>
+
+                <Grid item xs={3}>
+                    <Card>
+                        <CardContent sx={{textAlign: 'center'}}>
+                            <Flood sx={{fontSize: '6rem'}} />
+                            <Typography variant="h5">Extremereignisse</Typography>
+                            <Typography variant="body2">
+                            Mit welchen Anpassungsmaßnahmen lassen sich Hochwasserschäden durch zukünftige Extremniederschläge gering halten?
+                            </Typography>
+                        </CardContent>
+                        <CardActionArea>
+                            <CardActions>
+                                <Button onClick={() => scrollHandler('extremes')}>{lang === 'en' ? 'VISIT TOPIC' : 'ZUM THEMA' }</Button>
+                            </CardActions>
+                        </CardActionArea>
+                    </Card>                    
+                </Grid>
+
+                <Grid item xs={3}>
+                    <Card>
+                        <CardContent sx={{textAlign: 'center'}}>
+                            <Agriculture sx={{fontSize: '6rem'}} />
+                            <Typography variant="h5">Landnutzung</Typography>
+                            <Typography variant="body2">
+                            Welche Nutzpflanzen lassen sich auch unter veränderten Temperatur- und Niederschlagsbedingungen noch gewinnbringend in der Krummhörn anbauen?
+                            </Typography>
+                        </CardContent>
+                        <CardActionArea>
+                            <CardActions>
+                                <Button onClick={() => scrollHandler('agriculture')}>{lang === 'en' ? 'VISIT TOPIC' : 'ZUM THEMA' }</Button>
+                            </CardActions>
+                        </CardActionArea>
+                    </Card>
                 </Grid>
             </Grid>
+
+            
             <hr />
         </>
     );

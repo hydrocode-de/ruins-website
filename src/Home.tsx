@@ -127,7 +127,7 @@ const Home = () => {
                     
                     <InView onChange={( inView ) => inView ? setActiveTopic('info') : null}>
                         <Box ref={TOPICS.info}>
-                            <Introduction />
+                            <Introduction scrollHandler={scrollHandler}/>
                         </Box>
                     </InView>
                     
