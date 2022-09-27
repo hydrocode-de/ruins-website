@@ -49,7 +49,7 @@ const AppHeader: React.FC<AppHeaderProps> = ({ transition, backLink }) => {
                     )}
                     
                     
-                    <Box>
+                    <Box sx={{height: startView ? '100%' : '64px', color: startView ? 'white' : 'black', pt: 2}}>
                         <QuickAccessMenu />
                         <LangSwitch />
                     </Box>
