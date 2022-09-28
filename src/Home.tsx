@@ -68,7 +68,7 @@ const Home = () => {
                                 backgroundColor: 'rgba(1,1,1,0.5)', 
                                 display: 'flex', 
                                 justifyContent: 'center', 
-                                alignItems: 'left',
+                                alignItems: 'center',
                                 flexDirection: 'column'
                             }}>
                                 <Zoom in={inView} style={{transitionDuration: '0.8s', transitionDelay: '400ms'}}>

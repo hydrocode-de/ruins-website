@@ -21,17 +21,18 @@ const AppHeader: React.FC<AppHeaderProps> = ({ transition, backLink }) => {
                 transition: '1s ease-in-out',
                 boxShadow: startView ? 'none' : '0px 2px 4px -1px rgba(0 ,0, 0, 0.2)'
             }}>
-                <Toolbar sx={{height: startView ? '128px' : '64px', transition: '1s ease-in-out', flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Toolbar sx={{height: startView ? '256px' : '64px', transition: '1s ease-in-out', flexDirection: 'row', justifyContent: 'space-between'}}>
 
                     {backLink ? (
                         <Button>back</Button>
                     ) : (
-                        <Box sx={{display: 'flex', flexDirection: 'column'}}>
+                        <Box sx={{display: 'flex', flexDirection: 'column', textAlign: startView ? 'center': 'left', width: '80vw'}}>
                             <Typography variant="h1" component="div" sx={{
                                 flexGrow: 1,
                                 fontSize: startView ? '4rem' : '1.3rem',
                                 color: startView ? 'white' : 'inherit',
-                                transition: '1s ease-in-out'
+                                transition: '1s ease-in-out',
+                                fontWeight: 400
                             }}>
                                 Uncertainty Matters
                             </Typography>

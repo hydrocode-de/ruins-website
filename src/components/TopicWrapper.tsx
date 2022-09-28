@@ -29,7 +29,7 @@ const TopicWrapper: React.FC<TopicWrapperProps> = ({ steps }) => {
                 return (
                     <Box sx={{minHeight: '100vh', paddingTop: '2rem', paddingBottom: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}} key={index}>
                         <span></span>
-                        <InView onChange={(inView) => scrollHandler(inView, step)} threshold={0.5}>
+                        <InView onChange={(inView) => scrollHandler(inView, step)} threshold={0}>
                             <Box>{ step.content }</Box>
                         </InView>
                         <span></span>

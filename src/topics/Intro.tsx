@@ -59,7 +59,7 @@ const Introduction: React.FC<IntroductionProps> = ({ scrollHandler }) => {
 
     return (
         <>
-            <Grid container spacing={1} sx={{minHeight: 'calc(100vh - 64px)', alignItems: 'center'}}>
+            <Grid container spacing={1} sx={{minHeight: '100vh', alignItems: 'center'}}>
                 <Box sx={{maxWidth: '768px'}}>
 
                     <Typography variant="body1">
@@ -92,7 +92,7 @@ const Introduction: React.FC<IntroductionProps> = ({ scrollHandler }) => {
             <Grid container spacing={1} sx={{minHeight: '100vh', alignItems: 'center', justifyContent: 'left'}}>
                 
                 <Grid item xs={12}>
-                    <Typography variant="body1" component="p" sx={{maxWidth: '768px'}}>
+                    <Typography variant="body1" component="p" sx={{maxWidth: '992px'}}>
                         Küstenregionen sind durch den steigenden Meeresspiegel besonders vom Klimawandel betroffen.
                         An der deutschen Nordseeküste leben die Menschen schon lange mit dem Meer und nutzen aufwändige Entwässerungssysteme,
                         um die Landschaft hinter dem Deich, die vielerorts unterhalb des aktuellen Meeresspiegels liegt,

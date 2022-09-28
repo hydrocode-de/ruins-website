@@ -43,7 +43,7 @@ const ScrollButton: React.FC<ScrollButtonProp> = ({ mode, addKeyEvent: keyDown, 
         if (mode === 'top') {
             window.scrollTo({top: 0, behavior: 'smooth'});
         } else {
-            const px = mode === 'pageDown' ? window.innerHeight : -window.innerHeight;
+            const px = mode === 'pageDown' ? window.innerHeight : -(window.innerHeight);
             window.scrollBy({behavior: 'smooth', top: px});
         }
     }
