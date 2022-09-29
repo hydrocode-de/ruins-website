@@ -24,7 +24,7 @@ const TopicWrapper: React.FC<TopicWrapperProps> = ({ steps }) => {
         }
     }
     return (
-        <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center'}}>
+        <Box sx={{width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center'}}>
             {steps.map((step, index) => {
                 return (
                     <Box sx={{minHeight: '100vh', paddingTop: '2rem', paddingBottom: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}} key={index}>

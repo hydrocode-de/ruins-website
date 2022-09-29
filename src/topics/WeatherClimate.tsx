@@ -2,6 +2,7 @@ import { Grid, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import HoverTooltip from "../components/HoverTooltip";
 import StepImage from '../components/StepImage';
+import TopicIntro from '../components/TopicIntro';
 import TopicWrapper from '../components/TopicWrapper';
 import { RootState } from '../store';
 import { TopicStep } from '../topics.model';
@@ -18,14 +19,6 @@ import { TopicStep } from '../topics.model';
  * If you want to write the text yourself do it like: <HoverTooltip linkName="link-text">This is my own tooltip text...</Tooltip>
  */
 const steps_de: TopicStep[] = [
-    {
-        content: <>
-            <Typography variant="h1">Wetter und Klima</Typography>
-            <Typography variant="h2" sx={{marginTop: '2rem'}}>
-                Kurzfristiges lokales Wetter - alles andere als sicher!
-            </Typography> 
-        </>
-    },
     {
         content: <>
             <Typography variant="h3">Atmosphäre als chaotisches System</Typography>
@@ -157,7 +150,12 @@ const WeatherClimate: React.FC = () => {
     const lang = useSelector((state: RootState) => state.settings.lang);
     const steps = lang === 'de' ? steps_de : steps_en;
 
-    return (
+    return <>
+        <TopicIntro 
+            title={lang === 'en' ? 'Weather and Climate' : 'Wetter und Klima'}
+            imgSrc="https://via.placeholder.com/1920x1080"
+        />
+
         <Grid container spacing={1}>
             <Grid item xs={6}>
                 <TopicWrapper steps={steps}/>
@@ -168,8 +166,10 @@ const WeatherClimate: React.FC = () => {
             </Grid>
 
         </Grid>
+
+        <hr />
         
-    );
+    </>;
 }
 
 export default WeatherClimate;

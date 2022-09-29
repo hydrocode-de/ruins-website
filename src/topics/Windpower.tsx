@@ -2,6 +2,7 @@ import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import HoverTooltip from "../components/HoverTooltip";
 import StepImage from "../components/StepImage";
+import TopicIntro from "../components/TopicIntro";
 import TopicWrapper from "../components/TopicWrapper";
 import { RootState } from "../store";
 import { TopicStep } from "../topics.model";
@@ -20,14 +21,6 @@ import { TopicStep } from "../topics.model";
 const steps_de: TopicStep[] = [
     {
         content: <>
-            <Typography variant="h1">Windenergie</Typography>
-            <Typography variant="h2" component="p" sx={{marginTop: '2rem'}}>
-                Krummhörn - Windenergieproduktion unter Klimawandel
-            </Typography>
-        </>
-    },
-    {
-        content: <>
             <Typography variant="h3">Überschirft des Schrittes</Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
                 Ein kurzer Text zur Abbildung auf der Seite
@@ -44,8 +37,12 @@ const Windpower: React.FC = () => {
     const lang = useSelector((state: RootState) => state.settings.lang);
     const steps = lang === 'de' ? steps_de : steps_en;
 
-    return (
-        <Grid container spacing={1}>
+    return <>
+        <TopicIntro 
+            title={lang === 'en' ? 'Windpower' : 'Windenergie'}
+            imgSrc="https://via.placeholder.com/1920x1080"
+        />
+        <Grid container spacing={0}>
             
             <Grid item xs={6}>
                 <TopicWrapper steps={steps} />
@@ -55,7 +52,9 @@ const Windpower: React.FC = () => {
                 <StepImage />
             </Grid>
         </Grid>
-    );
+
+        <hr />
+    </>
 }
 
 export default Windpower;

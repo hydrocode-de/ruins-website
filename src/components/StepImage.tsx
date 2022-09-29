@@ -8,7 +8,7 @@ const StepImage: React.FC = () => {
 
     // if there is no imgSrc, return nothing
     if (!imgSrc) {
-        return null;
+        return <Box sx={{height: '100%', width: '100%', m: 0, p: 0}} />;
     }
 
     return (

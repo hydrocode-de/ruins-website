@@ -1,7 +1,8 @@
-import { Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import HoverTooltip from "../components/HoverTooltip";
 import StepImage from "../components/StepImage";
+import TopicIntro from "../components/TopicIntro";
 import TopicWrapper from "../components/TopicWrapper";
 import { RootState } from "../store";
 import { TopicStep } from "../topics.model";
@@ -97,9 +98,10 @@ const TemperatureShift: React.FC = () => {
 
     return (
         <>
-            <Typography variant="h1" component="div" sx={{mt: 3}}>
-                {lang === 'en' ? 'Uncertainty and Risk' : 'Unsicherheit und Risiko'}
-            </Typography>
+            <TopicIntro 
+                title={lang === 'en' ? 'Uncertainty and Risk' : 'Unsicherheit und Risiko'}
+                imgSrc="https://via.placeholder.com/1920x1080"
+            />
 
             <Grid container spacing={1}>
                 
