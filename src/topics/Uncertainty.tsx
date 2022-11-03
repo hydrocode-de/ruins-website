@@ -20,7 +20,7 @@ import { TopicStep } from "../topics.model";
  */
 const steps_de: TopicStep[] = [
     {   
-        imgSrc: '/steps/hiernochbildeinfügen.png',
+        imgSrc: '/steps/routing.png',
         content: <>
             <Typography variant="h3">Wie komme ich am schnellsten ins Büro?</Typography>
             <Typography variant="body1" component="p" sx={{marginTop: '2rem'}}>
@@ -37,7 +37,7 @@ const steps_de: TopicStep[] = [
         </>
     },
     {
-        imgSrc: '/steps/uncertainty_step1.png', 
+        imgSrc: '/steps/image3.png', 
         content: <>
             <Typography variant="h3">Eine besondere Form von Unsicherheit</Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
@@ -53,7 +53,7 @@ const steps_de: TopicStep[] = [
             </>
     },
     {
-        imgSrc: '/steps/uncertainty_step2.png', 
+        imgSrc: '/steps/image7.png', 
         content: <>
             <Typography variant="h3">Die Fahrzeit ist nicht jeden Tag gleich</Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
@@ -68,7 +68,7 @@ const steps_de: TopicStep[] = [
                 unterschritten werden, es aber durch Glatteis, Panne oder Unfall beliebig länger dauern kann. 
                 Man spricht dann von einem schweren/fetten rechten <strong>Schwanz der Verteilung</strong>. 
             </Typography>
-            <Typography variant="body2" component="p">
+            <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
                 Unabhängig von der Schiefe der Verteilung kann sie schmaler oder breiter sein. 
                 Die Form der Verteilung beschreibt das <strong>Risiko</strong> (im Sinne von Unklarheit über das 
                 Eintreten eines bestimmten Wertes). Ist die Verteilung schmal, weichen die möglichen Werte 
@@ -78,7 +78,7 @@ const steps_de: TopicStep[] = [
             </>
     },
     {
-        imgSrc: '/steps/uncertainty_step3.png', 
+        imgSrc: '/steps/image4.png', 
         content: <>
             <Typography variant="h3">Entscheidung trotz unvollständiger Information</Typography>
             <Typography variant="body2" component="p">
@@ -98,7 +98,6 @@ const steps_de: TopicStep[] = [
             </>
     },
     {
-        imgSrc: '/steps/uncertainty_step4.png',
         content: <>
             <Typography variant="h3">Entscheidungen sind individuell und subjektiv</Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
@@ -124,7 +123,7 @@ const steps_de: TopicStep[] = [
         </>
     },
     {
-        imgSrc: '/steps/uncertainty_step4.png',
+        imgSrc: '/steps/image13.png',
         content: <>
             <Typography variant="h3">Kleine Änderungen verändern das Bild</Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
@@ -145,7 +144,6 @@ const steps_de: TopicStep[] = [
         </>
     },
     {
-        imgSrc: '/steps/uncertainty_step4.png',
         content: <>
             <Typography variant="h3">Was nun die “richtige” Entscheidung ist, bleibt Sache des gesellschaftlichen Aushandlungsprozesses</Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
@@ -161,7 +159,7 @@ const steps_de: TopicStep[] = [
         </>
     }, 
     {
-        imgSrc: '/steps/uncertainty_step4.png',
+        imgSrc: '/steps/image10.png',
         content: <>
             <Typography variant="h3">Von der Schranke zum Klimawandel</Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>

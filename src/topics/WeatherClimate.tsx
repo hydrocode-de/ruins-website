@@ -106,7 +106,8 @@ const steps_de: TopicStep[] = [
             </Typography>
         </>
     },
-    {
+    {   
+        imgSrc: '/steps/image8.png', 
         content: <>
             <Typography variant="h3">Atmosphäre als chaotisches System mit intrinsischer Unsicherheit</Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
