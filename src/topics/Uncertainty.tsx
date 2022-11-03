@@ -42,12 +42,13 @@ const steps_de: TopicStep[] = [
             <Typography variant="h3">Eine besondere Form von Unsicherheit</Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
                 In diesem Beispiel sind also die möglichen Zustände der Welt bekannt: 
-                die Schranke ist offen oder geschlossen. Über die Wahrscheinlichkeit 
+                die Schranke ist offen oder geschlossen. Über die 
+                <HoverTooltip wikipedia="Wahrscheinlichkeit" linkName="Wahrscheinlichkeit" /> 
                 der Zustände wissen wir nichts. Dafür kennen wir das Ergebnis der 
                 Handlungsoptionen (Option A: direkte Route, Option B: Umweg) für 
                 jeden Zustand der Welt. Diese besondere Form der Unsicherheit 
-                nennt man <strong>Knightsche Unsicherheit</strong> nach dem amerikanischen 
-                <a href="https://de.wikipedia.org/wiki/Frank_Knight" target="_blank">Ökonomen Frank Knight (1885-1972)</a>.  
+                nennt man <HoverTooltip wikipedia="Knightsche_Unsicherheit" linkName="Knightscher Unsicherheit" /> nach dem amerikanischen 
+                Ökonomen <HoverTooltip wikipedia="Frank_Knight" linkName="Frank Knight" /> (1885-1972).  
             </Typography>
             </>
     },
@@ -102,7 +103,8 @@ const steps_de: TopicStep[] = [
             <Typography variant="h3">Entscheidungen sind individuell und subjektiv</Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
                 Für welche Route Sie sich entscheiden, ist nicht nur von objektiven Informationen über 
-                die Fahrzeiten und deren Wahrscheinlichkeit abhängig, sondern auch von Ihrer individuellen Nutzenfunktion, 
+                die Fahrzeiten und deren Wahrscheinlichkeit abhängig, sondern auch von Ihrer individuellen 
+                <HoverTooltip wikipedia="Nutzenfunktion_(Mikroökonomie)" linkName="Nutzenfunktion" />, 
                 die sie intuitiv benutzen, um die benötigte Fahrzeit zu bewerten. Je länger die Fahrt dauert, 
                 desto weniger relativen Nutzen würden wir der Option beimessen. Wir können uns nur zwischen 
                 den beiden Routen entscheiden, über die Schranke wissen wir nichts. Damit kann es passieren, 
@@ -164,18 +166,28 @@ const steps_de: TopicStep[] = [
             <Typography variant="h3">Von der Schranke zum Klimawandel</Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
                 Auf einer abstrakteren Ebene als unserem Alltagsbeispiel ist der Klimawandel ein weiterer Fall 
-                von Knightscher Unsicherheit[L]: Die Treibhauswirkung von CO2 in der Atmosphäre ist zwar seit den 
-                1980ern relativ gut bekannt und mit den Berichten des IPCC haben wir eine grobe Vorstellung, 
-                welche Ausmaße der Klimawandel entlang verschiedener Emissionspfade[L] bis 2100 annehmen könnte 
+                von <HoverTooltip wikipedia="Knightsche_Unsicherheit" linkName="Knightscher Unsicherheit" />: 
+                Die Treibhauswirkung von CO2 in der Atmosphäre ist zwar seit den 
+                1980ern relativ 
+                <HoverTooltip linkName="gut bekannt" external="https://www.nytimes.com/interactive/2018/08/01/magazine/climate-change-losing-earth.html"></HoverTooltip>  
+                und mit den Berichten des 
+                <HoverTooltip linkName="IPCC" external="https://www.carbonbrief.org/in-depth-qa-the-ipccs-sixth-assessment-on-how-climate-change-impacts-the-world/"></HoverTooltip> 
+                 haben wir eine grobe Vorstellung, 
+                welche Ausmaße der Klimawandel entlang verschiedener 
+                <HoverTooltip wikipedia="Repräsentativer_Konzentrationspfad" linkName="Emissionspfade" /> 
+                bis 2100 annehmen könnte 
                 (= Zustände der Welt bzw. Schrankenstellung im Beispiel oben), aber wie wahrscheinlich die einzelnen 
-                Emissionspfade sind, hängt maßgeblich von unserem aktuellen und zukünftigen Handeln ab[L] und 
+                Emissionspfade sind, hängt maßgeblich von unserem aktuellen und 
+                <HoverTooltip linkName="zukünftigen Handeln" external="https://www.deutschlandfunkkultur.de/figueres-rivett-carnac-klimakrise-100.html"></HoverTooltip> 
+                 ab und 
                 kann daher nicht exakt eingegrenzt werden. Die Eintretenswahrscheinlichkeit ist also für 
                 unsere Handlungsentscheidung unbekannt. 
             </Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
                 Wenn man aber die Klimaszenarien der Emissionspfade als gegeben annimmt, lassen sich durch 
-                Modellsimulationen die jeweiligen Auswirkungen z.B. auf die Temperatur abschätzen[L]. So kommen wir 
-                zu Verteilungen wie denen der Fahrzeiten in den zwei Routen oben.
+                Modellsimulationen die jeweiligen Auswirkungen z.B. auf 
+                <HoverTooltip linkName="die Temperatur abschätzen" external="https://climatescenarios.org/primer/climate-impacts"></HoverTooltip>. 
+                So kommen wir zu Verteilungen wie denen der Fahrzeiten in den zwei Routen oben.
             </Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
                 Im folgenden Kapitel geht es um historische Wetterdaten und Klimamodelle und die Unsicherheit, 

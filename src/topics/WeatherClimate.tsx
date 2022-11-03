@@ -117,9 +117,10 @@ const steps_de: TopicStep[] = [
             </Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
             Ausgehend von den aktuell beobachteten Zuständen liefern unterschiedlicheverschiedene Modelle läufe aufgrund der 
-            Zufälligkeit kleiner Abweichungen am Ausgangspunkt verschiedene Verläufe mit z.T. erheblichen AbweichungenUnterschieden 
-            (sog. Anfangswertprobleme[L]). Entsprechend spannen sich vielfältige Varianten möglicher Zustände in der Zukunft auf. 
-            Ein Beispiel dafür sind Vorhersagen der Lufttemperatur.
+            Zufälligkeit kleiner Abweichungen am Ausgangspunkt verschiedene Verläufe mit z.T. erheblichen Abweichungen 
+            (sog. <HoverTooltip wikipedia="Anfangswertproblem" linkName="Anfangswertprobleme" />). Entsprechend spannen sich vielfältige Varianten möglicher Zustände in der Zukunft auf. 
+            Ein Beispiel dafür sind 
+            <HoverTooltip linkName="Vorhersagen der Lufttemperatur" external="https://apps.ecmwf.int/webapps/opencharts/products/medium-2t-mean-spread?base_time=202208251200&projection=opencharts_europe&valid_time=202208251200#"></HoverTooltip> .
             </Typography>
         </>
     },
