@@ -10,7 +10,7 @@ const Imprint: React.FC = () => (
             <h2>Angaben gemäß § 5 TMG:</h2>
             <p>hydrocode Reid &amp; Mälicke GbR<br /></p>
             <h3>Postanschrift:</h3>
-            <p>Mombertstr. 2<br />76131 Karlsruhe<br /></p>
+            <p>Postfach 11 06 03<br />76056 Karlsruhe<br /></p>
             <h3>Kontakt:</h3>
             <p>Telefon: 015156169657<br />E-Mail: info@hydrocode.de</p>
             <p></p><p><br /></p>
