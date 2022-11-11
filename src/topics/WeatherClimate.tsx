@@ -21,11 +21,107 @@ import { TopicStep } from '../topics.model';
 const steps_de: TopicStep[] = [
     {
         content: <>
-            <Typography variant="h3">Atmosphäre als chaotisches System</Typography>
+            <Typography variant="h3">Das tägliche Wetter</Typography>
             <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
-            Das Wetter vorherzusagen ist dank aufwändiger Computersimulationen in den letzten Jahrzehnten einfacher und genauer geworden. 
-            Aber die Atmosphäre ist ein chaotisches System, d.h. kleine Änderungen zu Beginn können am Ende einen großen Effekt haben. 
-            Und das ist immer noch schwer vorherzusagen. 
+            Das tägliche Wetter ist berüchtigt für seine Wechselhaftigkeit. Im Herbst ist es völlig normal, 
+            für alle Fälle einen Regenschirm in der Tasche zu haben, wenn man das Haus verlässt. Wir sind auf diese erwartete 
+            Unterschiedlichkeit des Wetters vorbereitet und gehen mit ihr ganz selbstverständlich um.
+            </Typography>
+            <Typography variant="body2" component="p">
+            An einem Spätsommertag haben wir uns an das immer schöne Wetter gewöhnt und sind vom erwischt das Hitzegewitter überrascht. 
+            Das Wetter war lange wenig variabel und wir hatten diese Möglichkeit gar nicht mehr im Blick. 
+            Seltene Ereignisse werden also schnell so unwahrscheinlich bewertet, dass wir sie für unsere Bewertung der Lage vernachlässigen. 
+            Wenn wir uns nun an das Beispiel mit der Veränderung der Verteilung erinnern, müssen wir Erderwärmung nicht 
+            mit Sommer (weniger Wechselhaftigkeit) sondern vielmehr mit Aprilwetter (große Wechselhaftigkeit) in Verbindung 
+            bringen und ihr als überwiegend sicherheitsliebende Spezies viel Abwertung entgegen bringen.
+            </Typography>
+        </>
+    },
+    {
+        content: <>
+            <Typography variant="h3">Das Wetter ist in Raum und Zeit unterschiedlich</Typography>
+            <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
+            Um von Wetter zu Klima zu kommen, müssen lange Beobachtungen von vielen Wettergrößen zusammengefasst werden. 
+            Weil Wettergrößen wie Temperatur oder Niederschlag sowohl zeitlich als auch räumlich sehr unterschiedlich sind, 
+            ist es nicht einfach, das aktuelle oder vergangene Wetter zu sammengefasst zu messen und deren Verteilungen im Blick zu behalten. 
+            Für die Temperatur spielen z.B. neben regelmäßigen Verläufen über den Tag oder die Jahreszeiten auch Großwetterlagen, 
+            Bewölkung und die Beschaffenheit der Landfläche eine Rolle. 
+            </Typography>
+        </>
+    },
+    {
+        content: <>
+            <Typography variant="h3">Verteilungen werden für den Überblick zu Einzelwerten zusammengefasst</Typography>
+            <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
+            Um von vielen Einzelmessungen zu einem größeren Bild zu kommen, fasst man die verschiedenen Einzelwerte zusammen. 
+            Stündliche Messungen werden zu Tageswerten, Monats- oder sogar Jahresmitteln verrechnet. 
+            Aus einer Verteilung von Werten (wie die der Fahrzeiten oben) wird also rechnerisch ein Einzelwert gemacht. 
+            Je nach Anwendung und Fragestellung ist dabei nicht nur der Mittelwert interessant, 
+            sondern z.B. die niedrigste oder höchste Temperatur oder die Niederschlagssumme.
+            </Typography>
+        </>
+    },
+    {
+        content: <>
+            <Typography variant="h3">Klima ist langfristiges Wetter</Typography>
+            <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
+            So lässt sich von Momentaufnahmen an einer Wetterstation eine längerfristige Aussage über das Klima in einer 
+            Region wie der deutschen Nordseeküste ableiten.
+            </Typography>
+            <Typography variant="body2" component="p">
+            Um das langfristige Klima in Ostfriesland zu beschreiben, eignet sich der Jahresgang der Temperatur 
+            mit Minima und Maxima und den monatlichen Niederschlagssummen für eine Referenzperiode (typisches Klimadiagramm).
+            </Typography>
+        </>
+    },
+    {
+        content: <>
+            <Typography variant="h3">Stabile Muster verändern sich</Typography>
+            <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
+            Trotz der normalen Variabilität und einzelner Extremereignissen war dieses Muster 
+            (z.B. die mittlere Jahrestemperatur) lange Zeit stabil, aber die gemessenen Zeitreihen zeigen, 
+            dass sich dieses Muster verändert - es wird durchschnittlich wärmer!
+            </Typography>
+            <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
+            Noch klarer wird dieser Trend, wenn nicht die absoluten Werte, sondern der Vergleich zu einem Bezugswert gezeigt werden. 
+            Hier sind wärmere Jahre mit einer höheren mittleren Jahrestemperatur als … zunehmend rot 
+            (je wärmer, desto kräftiger) und kältere Jahre blau eingezeichnet. 
+            Zum Ende der Zeitreihe wird es eindeutig wärmer (röter). 
+            </Typography>
+        </>
+    },
+    {
+        content: <>
+            <Typography variant="h3">Klima ist mehr als Temperatur und Niederschlag</Typography>
+            <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
+            Trotz der normalen Variabilität und einzelner Extremereignissen war dieses Muster 
+            (z.B. die mittlere Jahrestemperatur) lange Zeit stabil, aber die gemessenen Zeitreihen zeigen, 
+            dass sich dieses Muster verändert - es wird durchschnittlich wärmer!
+            </Typography>
+            <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
+            Noch klarer wird dieser Trend, wenn nicht die absoluten Werte, sondern der Vergleich zu einem Bezugswert gezeigt werden. 
+            Hier sind wärmere Jahre mit einer höheren mittleren Jahrestemperatur als … zunehmend rot 
+            (je wärmer, desto kräftiger) und kältere Jahre blau eingezeichnet. 
+            Zum Ende der Zeitreihe wird es eindeutig wärmer (röter). 
+            </Typography>
+        </>
+    },
+    {   
+        imgSrc: '/steps/image8.png', 
+        content: <>
+            <Typography variant="h3">Atmosphäre als chaotisches System mit intrinsischer Unsicherheit</Typography>
+            <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
+            Das Wetter vorherzusagen ist dank aufwändiger Computersimulationen in den letzten Jahrzehnten einfacher 
+            und genauer geworden. Aber die Atmosphäre ist ein chaotisches System, d.h. kleine Änderungen zu Beginn 
+            können am Ende einen großen Effekt haben und umso aufgewirbelter die Atmosphäre gerade ist, desto schwieriger 
+            sind präzise Vorhersagen.
+            </Typography>
+            <Typography variant="body2" component="p" sx={{marginTop: '2rem'}}>
+            Ausgehend von den aktuell beobachteten Zuständen liefern unterschiedlicheverschiedene Modelle läufe aufgrund der 
+            Zufälligkeit kleiner Abweichungen am Ausgangspunkt verschiedene Verläufe mit z.T. erheblichen Abweichungen 
+            (sog. <HoverTooltip wikipedia="Anfangswertproblem" linkName="Anfangswertprobleme" />). Entsprechend spannen sich vielfältige Varianten möglicher Zustände in der Zukunft auf. 
+            Ein Beispiel dafür sind 
+            <HoverTooltip linkName="Vorhersagen der Lufttemperatur" external="https://apps.ecmwf.int/webapps/opencharts/products/medium-2t-mean-spread?base_time=202208251200&projection=opencharts_europe&valid_time=202208251200#"></HoverTooltip> .
             </Typography>
         </>
     },
@@ -152,7 +248,7 @@ const WeatherClimate: React.FC = () => {
 
     return <>
         <TopicIntro 
-            title={lang === 'en' ? 'Weather and Climate' : 'Wetter und Klima'}
+            title={lang === 'en' ? 'Weather - uncertain and widely ordinary' : 'Wetter – unsicher und weitgehend alltäglich'}
             imgSrc="https://via.placeholder.com/1920x1080"
         />
 
