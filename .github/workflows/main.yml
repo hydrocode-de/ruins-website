@@ -25,16 +25,6 @@ jobs:
       run: npm run build
       env:
         CI: false
-    
-    - name: Copy to machine - ruins.hydrocode.de mirror
-      uses: appleboy/scp-action@master
-      with:
-        host: "ruins.hydrocode.de"
-        username: root
-        key: ${{ secrets.SCP_KEY }}
-        source: build/*
-        target: /var/www/html
-        strip_components: 1
   
     - name: Copy to machine - Production
       uses: appleboy/scp-action@master
