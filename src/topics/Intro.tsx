@@ -108,7 +108,7 @@ const Introduction: React.FC<IntroductionProps> = ({ scrollHandler }) => {
                     <Card>
                         <CardContent sx={{textAlign: 'center'}}>
                             <Agriculture sx={{fontSize: '5rem'}} />
-                            <Typography variant="h5">Landwirtschaft</Typography>
+                            <Typography sx={{display:'flex', alignItems:'center', textAlign:'center'}} variant="h5"> <Agriculture /> &nbsp; Landwirtschaft</Typography>
                             <Typography variant="body2" sx={{height: '100px'}}>
                             Welche Nutzpflanzen lassen sich auch unter veränderten Temperatur- und Niederschlagsbedingungen noch gewinnbringend in der Krummhörn anbauen?<br />
                             </Typography>

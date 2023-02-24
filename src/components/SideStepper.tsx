@@ -1,7 +1,7 @@
 import { Box, Button, Icon, Step, StepButton, StepContent,  Stepper, Typography } from "@mui/material";
 import { TOPIC_TYPE } from "../topics.model";
 
-import { WindPowerOutlined, Public, FloodOutlined, BubbleChartOutlined, InfoOutlined, AgricultureOutlined, Slideshow, Quiz } from '@mui/icons-material';
+import { WindPowerOutlined, Public, FloodOutlined, BubbleChartOutlined, InfoOutlined, AgricultureOutlined, Slideshow, Quiz, QueryStats } from '@mui/icons-material';
 import { useNavigate } from "react-router-dom";
 
 interface SideStepperProps {
@@ -11,12 +11,13 @@ interface SideStepperProps {
 
 const TOPIC_ORDER = {
     info: 0,
-    uncertainty: 1,
-    weather: 2,
-    agriculture: 3,
-    wind: 4,
-    extremes: 5,
-    other: 6,
+    portfolio: 1,
+    uncertainty: 2,
+    weather: 3,
+    agriculture: 4,
+    wind: 5,
+    extremes: 6,
+    other: 7,
 }
 
 const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) => {
@@ -42,6 +43,17 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                 </Step>
 
                 <Step key="1">
+                    <StepButton color="inherit" onClick={() => jumpToTopic('portfolio')} icon={<QueryStats />}>
+                        <Typography variant="caption" style={{display: 'flex', alignItems: 'center', flexWrap: 'wrap'}}>
+                        <Quiz style={{fontSize: '1rem', marginRight: '0.3rem'}} /> Portfolio Analysis
+                        </Typography>
+                    </StepButton>
+                    <StepContent>
+                        {/* <Button variant="contained" onClick={() => navigate('/app/uncertainty')}>Open App</Button> */}
+                    </StepContent>
+                </Step>
+
+                <Step key="2">
                     <StepButton color="inherit" onClick={() => jumpToTopic('uncertainty')} icon={<BubbleChartOutlined />}>
                         <Typography variant="caption" style={{display: 'flex', alignItems: 'center', flexWrap: 'wrap'}}>
                         <Quiz style={{fontSize: '1rem', marginRight: '0.3rem'}} /> Uncertainty and Risk
@@ -52,7 +64,7 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                     </StepContent>
                 </Step>
 
-                <Step key="2">
+                <Step key="3">
                     <StepButton color="inherit" onClick={() => jumpToTopic('weather')} icon={<Public />}>
                         <Typography variant="caption" style={{display: 'flex', alignItems: 'center', flexWrap: 'wrap'}}>
                             <Quiz style={{fontSize: '1rem', marginRight: '0.3rem'}} /> Weather and Climate
@@ -63,7 +75,7 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                     </StepContent>
                 </Step>
 
-                <Step key="3">
+                <Step key="4">
                     <StepButton color="inherit" onClick={() => jumpToTopic('agriculture')} icon={<AgricultureOutlined />}>
                         <Typography variant="caption" style={{display: 'flex', alignItems: 'center', flexWrap: 'wrap'}}>
                         <Slideshow style={{fontSize: '1rem', marginRight: '0.3rem'}} />  Landuse
@@ -74,7 +86,7 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                     </StepContent>
                 </Step>
 
-                <Step key="4">
+                <Step key="5">
                     <StepButton color="inherit" onClick={() => jumpToTopic('wind')} icon={<WindPowerOutlined />}>
                         <Typography variant="caption" style={{display: 'flex', alignItems: 'center', flexWrap: 'wrap'}}>
                         <Slideshow style={{fontSize: '1rem', marginRight: '0.3rem'}} /> Windpower
@@ -85,7 +97,7 @@ const SideStepper: React.FC<SideStepperProps> = ({ jumpToTopic, activeTopic }) =
                     </StepContent>
                 </Step>
 
-                <Step key="5">
+                <Step key="6">
                     <StepButton color="inherit" onClick={() => jumpToTopic('extremes')} icon={<FloodOutlined />}>
                         <Typography variant="caption" style={{display: 'flex', alignItems: 'center', flexWrap: 'wrap'}}>
                         <Slideshow style={{fontSize: '1rem', marginRight: '0.3rem'}} /> Extremes

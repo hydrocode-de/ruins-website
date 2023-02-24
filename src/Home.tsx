@@ -14,6 +14,7 @@ import ScrollButtonArea from './components/ScrollButtonArea';
 
 // import the Topics
 import Introduction from './topics/Intro';
+import PortfolioIntro from './topics/PortfolioIntro';
 import UncertaintyTopic from './topics/Uncertainty';
 import WeatherClimate from './topics/WeatherClimate';
 import TemperatureShift from './topics/TemperatureShift';
@@ -100,6 +101,12 @@ const Home = () => {
                         <InView onChange={( inView ) => inView ? setActiveTopic('info') : null}>
                             <Box ref={TOPICS.info}>
                                 <Introduction scrollHandler={scrollHandler}/>
+                            </Box>
+                        </InView>
+                        
+                        <InView onChange={( inView ) => inView ? setActiveTopic('portfolio') : null}>
+                            <Box ref={TOPICS.info}>
+                                <PortfolioIntro />
                             </Box>
                         </InView>
                         
