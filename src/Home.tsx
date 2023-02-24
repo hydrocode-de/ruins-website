@@ -111,7 +111,9 @@ const Home = () => {
                         </InView>
 
                         <InView onChange={( inView ) => inView ? setActiveTopic('weather') : null} >
-                            <Box ref={TOPICS.weather}><WeatherClimate /></Box>
+                            <Box ref={TOPICS.weather}>
+                                <WeatherClimate />
+                            </Box>
                         </InView>
                         
                         <InView onChange={( inView ) => inView ? setActiveTopic('agriculture') : null} >

@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import HoverTooltip from "../components/HoverTooltip";
 import StepImage from "../components/StepImage";

@@ -1,4 +1,4 @@
-import { Button, Divider, ListItemIcon, ListItemText, Menu, MenuItem } from "@mui/material";
+import { Button, ListItemIcon, ListItemText, Menu, MenuItem } from "@mui/material";
 import { WindPowerOutlined, FloodOutlined, BubbleChartOutlined, Public } from '@mui/icons-material';
 import React, { useState } from "react";
 import { useSelector } from "react-redux";

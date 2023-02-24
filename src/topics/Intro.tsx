@@ -1,13 +1,10 @@
-import { Box, Button, Card, CardActionArea, CardActions, CardContent, Grid, Typography, Zoom } from "@mui/material";
+import { Box, Button, Card, CardActionArea, CardActions, CardContent, Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import HoverTooltip from "../components/HoverTooltip";
-import StepImage from "../components/StepImage";
-import TopicWrapper from "../components/TopicWrapper";
 import { RootState } from "../store";
 import { TopicStep, TOPIC_TYPE } from "../topics.model";
 
 import { Agriculture, Flood, WindPower } from '@mui/icons-material';
-import { useNavigate } from "react-router-dom";
 
 /**
  * Build the text elements using React-MUI (material ui)
