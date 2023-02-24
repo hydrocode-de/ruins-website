@@ -32,11 +32,11 @@ function App() {
   }
   
   // streamlit apps
-  const Uncertainty = () => <Box><StreamlitPage src="http://116.203.189.3:42003" title="Uncertainty and Risk" /></Box>
-  const Weather = () => <Box><StreamlitPage src="http://116.203.189.3:42001" title="Weather and Climate" /></Box>
-  const Sunburst = () => <Box><StreamlitPage src="http://116.203.189.3:42010" title="Climate Model Overview" /></Box>
-  const Landuse = () => <Box><StreamlitPage src="http://116.203.189.3:42004" title="Landuse management under uncertainty"/></Box>
-  const Extemes = () => <Box><StreamlitPage src="http://116.203.189.3:42002" title="Extremes and Floods" /></Box>
+  const Uncertainty = () => <Box><StreamlitPage src="https://uncertainty.uncertaintymatters.de" title="Uncertainty and Risk" /></Box>
+  const Weather = () => <Box><StreamlitPage src="https://weather.uncertaintymatters.de" title="Weather and Climate" /></Box>
+  const Sunburst = () => <Box><StreamlitPage src="https://modelsoverview.uncertaintymatters.de" title="Climate Model Overview" /></Box>
+  const Landuse = () => <Box><StreamlitPage src="https://landuse.uncertaintymatters.de" title="Landuse management under uncertainty"/></Box>
+  const Extemes = () => <Box><StreamlitPage src="https://extremes.uncertaintymatters.de" title="Extremes and Floods" /></Box>
 
   return (
     <>

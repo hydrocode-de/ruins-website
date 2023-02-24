@@ -40,7 +40,7 @@ const Home = () => {
     // create state for active topic
     const [activeTopic, setActiveTopic] = useState<TOPIC_TYPE>('info');
 
-    // The SideStetter needs a handler that sets active topic and scrolls
+    // The SideStepper needs a handler that sets active topic and scrolls
     const scrollHandler = (topic: TOPIC_TYPE) => {
         setActiveTopic(topic);
         TOPICS[topic].current!.scrollIntoView({
