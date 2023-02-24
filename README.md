@@ -1,6 +1,6 @@
-# RUINS website
+# uncertainty matters website
 
 This repository contains the main Website frame for the RUINS project.
 
-See: http://ruins.hydrocode.de
+See: https://uncertaintymatters.de
 
